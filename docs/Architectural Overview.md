@@ -31,6 +31,3 @@ Arquitetura Lógica
 ----------------------
 
 ![Logical Architecture Diagram](/docs/images/logical_architecture.png)
-
-Referências
---------------
