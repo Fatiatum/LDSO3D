@@ -24,7 +24,7 @@
 ----------
 
 6. Back-Office About Page
-	     ![BO About Page](/docs/images/backoffice-about.png)
+	     ![BO About Page](/docs/images/backofice-about.png)
 ----------
 
 7. Back-Office Catalogue Page
