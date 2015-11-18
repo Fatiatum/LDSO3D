@@ -87,16 +87,16 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="contact_title  wow fadeInUp animated">
-                        <h1>get in touch</h1>
+                        <h1>Create your own experience</h1>
                         <img src="images/shape.png" alt="">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna<br/> aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
+                        <p>Tell us the kind of experience you would want to live</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-3  wow fadeInLeft animated">
+                <!--<div class="col-md-3  wow fadeInLeft animated">
                     <div class="single_contact_info">
                         <h2>Call Me</h2>
                         <p>+88 00 123 456 01</p>
@@ -109,19 +109,18 @@
                         <h2>Address</h2>
                         <p>216 Street Address, Barisal, BD</p>
                     </div>
-                </div>
-                <div class="col-md-9  wow fadeInRight animated">
-                    <form class="contact-form" action="">
+                </div> -->
+                <div class="col-md-12  wow fadeInLeft animated" id="formulario">
+                    <form class="contact-form" action="" onsubmit="sendMail();return false;">
                         <div class="row">
                             <div class="col-md-6">
-                                <input type="text" class="form-control" id="name" placeholder="Name">
-                                <input type="email" class="form-control" id="email" placeholder="Email">
-                                <input type="text" class="form-control" id="subject" placeholder="Subject">                                
+                                <input type="text" class="form-control" id="name" placeholder="Name"  required>
+                                <input type="email" class="form-control" id="email" placeholder="Email"  required>                            
                             </div>
                             <div class="col-md-6">
-                                <textarea class="form-control" id="message" rows="25" cols="10" placeholder="  Message Texts..."></textarea>
-                                <button type="button" class="btn btn-default submit-btn form_submit">SEND MESSAGE</button>                                
+                                <textarea class="form-control" id="message" rows="25" cols="10" placeholder="  Describe your adventure..." required></textarea>                              
                             </div>
+                            <button type="submit" class="btn btn-default submit-btn form_submit">SEND MESSAGE</button>
                         </div>
                     </form>
                 </div>
@@ -131,7 +130,7 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="work-with   wow fadeInUp animated">
-                        <h3>looking forward to hearing from you!</h3>
+                        <h3>SAMPLE THANK YOU TEXT!</h3>
                     </div>
                 </div>
             </div>
@@ -180,6 +179,18 @@
     <script src="js/owl.carousel.js"></script>
     <script src="js/wow.js"></script>
     <script src="js/script.js"></script>
+
+    <script>
+    function sendMail(){
+        /*Not tested*/
+        var link = "mailto:example@gmail.com"
+             + "&subject=" + escape(document.getElementById("name").value) + escape("'s experience proposal, Email: ")) + escape(document.getElementById("email") + 
+             + "&body=" + escape(document.getElementById("message").value);
+
+    window.location.href = link;
+    }
+    </script>
+
 
 </body>
 
