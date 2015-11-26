@@ -1,0 +1,37 @@
+    <%= render 'shared/header' %>
+
+    <!--NAVBAR-->
+    <header id="HOME" style="background-position: 50% -125px;">
+        <div class="section_overlay">
+            <%= render 'shared/navbar' %>
+        </div>        
+    </header>
+    <!--/NAVBAR-->  
+
+    <!--ABOUT-->
+    <section class="about_us_area" id="ABOUT">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="about_title">
+                        <h2>About Us</h2>
+                        <%= image_tag "shape.png" %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4  wow fadeInLeft animated">
+                    <div class="single_image">
+                        <%= image_tag "w2.jpg" %>
+                    </div>
+                </div>
+                <div class="col-md-8  wow fadeInRight animated">
+                    <p class="about_us_p">Column 1 Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text</p>
+                </div>
+        </div>
+    </section>
+    <!--/ABOUT-->
+
+    <%= render 'shared/footer' %> 

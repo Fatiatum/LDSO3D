@@ -1,0 +1,101 @@
+    <%= render 'shared/header' %>
+
+    <!--NAVBAR-->
+    <header id="HOME" style="background-position: 50% -125px;">
+        <div class="section_overlay">
+            <%= render 'shared/navbar' %>
+        </div>        
+    </header>
+    <!--/NAVBAR-->  
+    
+    <!--CATALOG-->
+    <section class="work_area" id="WORK">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="work_title  wow fadeInUp animated">
+                        <h1>Experiences</h1>
+                        <%= image_tag "shape.png" %>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna <br> aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <ul class="portfolio-filter text-center">
+                    <li><a class="btn btn-default active" href="#" data-filter="*">All</a></li>
+                    <li><a class="btn btn-default" href="#" data-filter=".romantic">Romantic</a></li>
+                    <li><a class="btn btn-default" href="#" data-filter=".radical">Radical</a></li>
+                    <li><a class="btn btn-default" href="#" data-filter=".fun">Fun</a></li>
+                    <li><a class="btn btn-default" href="#" data-filter=".corp">Corporative</a></li>
+                </ul><!--/#portfolio-filter-->
+                <div class="col-md-4 no_padding portfolio-item romantic">
+                    <div class="single_image">
+                        <%= image_tag "w1.jpg" %>
+                        <div class="image_overlay">
+                            <a href="">View Experience</a>
+                            <h2>Title</h2>
+                            <h4>Subtitle</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 no_padding portfolio-item radical">
+                    <div class="single_image">
+                        <%= image_tag "w1.jpg" %>
+                        <div class="image_overlay">
+                            <a href="">View Experience</a>
+                            <h2>Title</h2>
+                            <h4>Subtitle</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 no_padding portfolio-item fun">
+                    <div class="single_image">
+                        <%= image_tag "w1.jpg" %>
+                        <div class="image_overlay">
+                            <a href="">View Experience</a>
+                            <h2>Title</h2>
+                            <h4>Subtitle</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pad_top">
+                <div class="col-md-4 no_padding portfolio-item corp">
+                    <div class="single_image">
+                        <%= image_tag "w1.jpg" %>
+                        <div class="image_overlay">
+                            <a href="">View Experience</a>
+                            <h2>Title</h2>
+                            <h4>Subtitle</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 no_padding portfolio-item romantic">
+                    <div class="single_image">
+                        <%= image_tag "w1.jpg" %>
+                        <div class="image_overlay">
+                            <a href="">View Experience</a>
+                            <h2>Title</h2>
+                            <h4>Subtitle</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 no_padding portfolio-item corp">
+                    <div class="single_image">
+                        <%= image_tag "w1.jpg" %>
+                        <div class="image_overlay">
+                            <a href="">View Experience</a>
+                            <h2>Title</h2>
+                            <h4>Subtitle</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>           
+        </div>
+    </section>
+    <%= render 'shared/experience_form' %> 
+    <!--/CATALOG-->
+    
+    <%= render 'shared/footer' %> 
