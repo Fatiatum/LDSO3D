@@ -16,7 +16,7 @@
                     <div class="contact_title  wow fadeInUp animated">
                         <h1>get in touch</h1>
                         <%= image_tag "shape.png" %>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna<br/> aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
+                        <p><%= @contact.text %></p>
                     </div>
                 </div>
             </div>
@@ -26,15 +26,15 @@
                 <div class="col-md-3  wow fadeInLeft animated">
                     <div class="single_contact_info">
                         <h2>Call Me</h2>
-                        <p>+88 00 123 456 01</p>
+                        <p><%= @contact.phone %></p>
                     </div>
                     <div class="single_contact_info">
                         <h2>Email Me</h2>
-                        <p>Hello@abdullahnoman.com</p>
+                        <p><%= @contact.email %></p>
                     </div>
                     <div class="single_contact_info">
                         <h2>Address</h2>
-                        <p>216 Street Address, Barisal, BD</p>
+                        <p><%= @contact.address %></p>
                     </div>
                 </div>
                 <div class="col-md-9  wow fadeInRight animated">
@@ -51,15 +51,6 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="work-with   wow fadeInUp animated">
-                        <h3>looking forward to hearing from you!</h3>
-                    </div>
                 </div>
             </div>
         </div>

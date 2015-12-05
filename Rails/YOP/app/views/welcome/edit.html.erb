@@ -1,0 +1,51 @@
+<h1>EDIT HOME PAGE</h1>
+ 
+<%= form_for @welcome do |f| %>
+ 
+  <% if @welcome.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@welcome.errors.count, "error") %> prohibited
+        this welcome from being saved:
+      </h2>
+      <ul>
+        <% @welcome.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :subtitle %><br>
+    <%= f.text_field :subtitle %>
+  </p>
+
+  <p>
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </p>
+
+  <p>
+    <%= f.label :texttile %><br>
+    <%= f.text_field :texttile %>
+  </p>
+
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_field :text %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back',   welcome_index_path   %>
+
