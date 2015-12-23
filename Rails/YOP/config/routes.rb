@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :questions
+  resources :experiences
+  resources :experiences
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -9,12 +12,12 @@ Rails.application.routes.draw do
   resources :about
   resources :contacts
   resources :welcome
+  resources :faq
 
   root 'welcome#index'
 
 
   get  'catalog', to: 'products#index'
-  get  'faq' => 'faq#view', as: :faq
   # Example of regular route:
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

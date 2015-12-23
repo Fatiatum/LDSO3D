@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+	before_action :set_product, only: [:show, :edit, :update, :destroy]
 	def index
 		@products = Product.all
 	end
@@ -8,11 +9,14 @@ class ProductsController < ApplicationController
 	end
 
 	def new	
-		@products = Product.new
+		@product = Product.new
+		3.times do
+		    experience = @product.experiences.build
+		end
 	end
 
 	def edit
-	    @product = Product.find(params[:id])
+		@product = Product.find(params[:id])
 	end
 
 	def create
@@ -36,8 +40,12 @@ class ProductsController < ApplicationController
 	end
 
 	private 
+	    def set_product
+	      @product = Product.find(params[:id])
+	    end
+
 		def product_params
-			params.require(:product).permit(:name, :description, :photo)
+			params.require(:product).permit(:name, :description, :image, experiences_attributes: [ :id, :name, :_destroy ])
 		end
 
 end

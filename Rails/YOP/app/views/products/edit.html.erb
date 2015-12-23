@@ -1,35 +1,51 @@
 <h1>Editing Product</h1>
- 
+
 <%= form_for @product do |f| %>
- 
-  <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@product.errors.count, "error") %> prohibited
-        this product from being saved:
-      </h2>
-      <ul>
-        <% @product.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
- 
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
- 
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
- 
+
+<% if @product.errors.any? %>
+<div id="error_explanation">
+  <h2>
+    <%= pluralize(@product.errors.count, "error") %> prohibited
+    this product from being saved:
+  </h2>
+  <ul>
+    <% @product.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
 <% end %>
- 
+
+
+<p>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
+</p>
+
+<p>
+  <%= f.label :description %><br>
+  <%= f.text_area :description %>
+</p>
+
+<p>
+  <%= f.label :image %><br>
+  <%= f.file_field :image %>
+</p>
+
+<%= f.fields_for :experiences do |experience| %>
+<p>
+  <%= experience.label :name %><br />
+  <%= experience.text_field :name %><br />
+  <%= experience.check_box :_destroy %>
+  <%= experience.label :_destroy, 'remove' %>
+</p>
+<% end %>
+
+<p>
+  <%= f.submit %>
+</p>
+
+<% end %>
+
+<%= link_to 'Show', @product %> |
 <%= link_to 'Back', products_path %>

@@ -1,0 +1,50 @@
+    <%= render 'shared/header' %>
+
+    <!--NAVBAR-->
+    <header id="HOME" style="background-position: 50% -125px;">
+        <div class="section_overlay">
+            <%= render 'shared/navbar' %>
+        </div>        
+    </header>
+    <!--/NAVBAR-->
+
+    <!--FAQ-->
+    <section class="about_us_area" id="FAQ">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="about_title  wow fadeInUp animated">
+                        <h2>FAQ</h2>
+                        <%= image_tag "shape.png" %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bs-example">
+            <% if @faq.questions.any? %>
+            <div class="panel-group  wow fadeInLeft animated" id="accordion">
+                <% @faq.questions.each do |question| %>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><%= question.name %></a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <p><%= question.answer %></p>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+            <% else %>
+            <p>none available</p>
+            <% end %>
+        </div>
+    </section>
+    <!--/FAQ-->
+
+    <%= render 'shared/footer' %> 

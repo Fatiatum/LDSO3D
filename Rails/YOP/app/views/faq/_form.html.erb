@@ -1,0 +1,17 @@
+<%= form_for @faq do |f| %>
+
+  <%= f.fields_for :questions do |question| %>
+  <p>
+    <%= question.label :name %><br />
+    <%= question.text_field :name %><br />
+    <%= question.label :answer %><br />
+    <%= question.text_area :answer %><br />
+    <%= question.check_box :_destroy %>
+    <%= question.label :_destroy, 'remove' %>
+  </p>
+  <% end %>
+   
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

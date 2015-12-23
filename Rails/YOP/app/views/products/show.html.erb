@@ -24,7 +24,7 @@
 		<div class="row">
 			<div class="col-md-4  wow fadeInLeft animated">
 				<div class="single_image">
-					<%= image_tag "w2.jpg" %>
+					<%= image_tag @product.image %>
 				</div>
 			</div>
 			<div class="col-md-8  wow fadeInRight animated">
@@ -72,6 +72,17 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="col-md-4  wow fadeInLeft animated">
+				<% if @product.experiences.any? %>
+				<ul>
+					<% @product.experiences.each do |experience| %>
+					<li><%= link_to experience.name, experience %></li>
+					<% end %>
+				</ul>
+				<% else %>
+				<p>none available</p>
+				<% end %>
 			</div>
 		</div>
 	</div>
