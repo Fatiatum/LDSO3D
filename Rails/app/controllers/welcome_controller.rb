@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
   def index
     @welcome = Welcome.first
+    @locale = params[:locale]
   end
 
   def show
@@ -22,6 +23,7 @@ class WelcomeController < ApplicationController
 
   private
   	def welcome_params
-  		params.require(:welcome).permit(:title, :subtitle, :image, :texttitle, :text)
+  		params.require(:welcome).permit(:title_pt, :subtitle_pt, :texttitle_pt, :text_pt,
+                                      :title_en, :subtitle_en, :texttitle_en, :text_en, :image)
   	end
 end

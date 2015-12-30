@@ -11,11 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151227124838) do
+ActiveRecord::Schema.define(version: 20151229234715) do
 
   create_table "abouts", force: :cascade do |t|
-    t.string   "text",       null: false
+    t.string   "text_pt"
+    t.string   "text_en"
     t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "catalogs", force: :cascade do |t|
+    t.string   "text"
+    t.string   "exp_title"
+    t.string   "exp_text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -66,13 +75,17 @@ ActiveRecord::Schema.define(version: 20151227124838) do
   add_index "questions", ["faq_id"], name: "index_questions_on_faq_id"
 
   create_table "welcomes", force: :cascade do |t|
-    t.string   "title"
-    t.string   "subtitle"
+    t.string   "title_pt"
+    t.string   "title_en"
+    t.string   "subtitle_pt"
+    t.string   "subtitle_en"
+    t.string   "texttitle_pt"
+    t.string   "texttitle_en"
+    t.string   "text_pt"
+    t.string   "text_en"
     t.string   "image"
-    t.string   "texttitle"
-    t.string   "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end

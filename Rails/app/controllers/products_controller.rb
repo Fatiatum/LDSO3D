@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
 	before_action :set_product, only: [:show, :edit, :update, :destroy]
 	def index
 		@products = Product.all
-		@cont = Contact.new
+		@catalog = Catalog.first
 	end
 
 	def show
@@ -22,10 +22,7 @@ class ProductsController < ApplicationController
 
 	def create
 	    @product = Product.new(product_params)
-	    @contact = Contact.new(contact_params)
-    	@mail = Contact.first.email
-    	ManageMailer.contact(@contact, @mail).deliver_now
-    	
+	    
 	    if @product.save
 	      redirect_to @product
 	    else

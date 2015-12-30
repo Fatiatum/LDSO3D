@@ -1,6 +1,7 @@
 class AboutController < ApplicationController
   def index
     @about = About.first
+    @locale = params[:locale]
   end
 
   def show
@@ -22,6 +23,6 @@ class AboutController < ApplicationController
 
   private
   	def about_params
-  		params.require(:about).permit(:text, :image)
+  		params.require(:about).permit(:text_pt, :text_en, :image)
   	end
 end

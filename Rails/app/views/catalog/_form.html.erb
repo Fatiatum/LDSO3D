@@ -1,0 +1,20 @@
+<%= form_for @catalog do |f| %>
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_field :text %>
+  </p>
+
+  <p>
+    <%= f.label :exp_title %><br>
+    <%= f.text_field :exp_title %>
+  </p>
+ 
+  <p>
+    <%= f.label :exp_text %><br>
+    <%= f.text_field :exp_text %>
+  </p>
+   
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

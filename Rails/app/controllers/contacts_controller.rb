@@ -5,11 +5,11 @@ class ContactsController < ApplicationController
   end
 
   def show
-  	@contact = Contact.first
+    @contact = Contact.first
   end
 
   def edit
-  	@contact = Contact.first
+    @contact = Contact.first
   end
 
   def create 
@@ -21,21 +21,22 @@ class ContactsController < ApplicationController
   end
 
   def update
-  	@contact = Contact.first
-  	if @contact.update(contact_params_to_save)
-  		redirect_to @contact
-  	else
-  		render 'edit'
-  	end
+    @contact = Contact.first
+    if @contact.update(contact_params_to_save)
+      redirect_to @contact
+    else
+      render 'edit'
+    end
   end
 
   private
-  	def contact_params_to_save
-  		params.require(:contact).permit(:text, :phone, :email, :address)
-  	end
+    def contact_params_to_save
+      params.require(:contact).permit(:text, :phone, :email, :address)
+    end
 
     def contact_params
       params.require(:contact).permit(:from_mail, :name, :subject, :msg)
     end
 end
+
 

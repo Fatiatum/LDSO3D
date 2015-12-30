@@ -1,15 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  subtitle: MyString
+  title_pt: MyString
+  title_en: MyString
+  subtitle_pt: MyString
+  subtitle_en: MyString
+  texttitle_pt: MyString
+  texttitle_en: MyString
+  text_pt: MyString
+  text_en: MyString
   image: MyString
-  texttitle: MyString
-  text: MyString
 
 two:
-  title: MyString
-  subtitle: MyString
+  title_pt: MyString
+  title_en: MyString
+  subtitle_pt: MyString
+  subtitle_en: MyString
+  texttitle_pt: MyString
+  texttitle_en: MyString
+  text_pt: MyString
+  text_en: MyString
   image: MyString
-  texttitle: MyString
-  text: MyString

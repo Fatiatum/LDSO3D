@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="about_title">
-                        <h2>About Us</h2>
+                        <h2><%= t ".about" %></h2>
                         <%= image_tag "shape.png" %>
                     </div>
                 </div>
@@ -28,7 +28,11 @@
                     </div>
                 </div>
                 <div class="col-md-8  wow fadeInRight animated">
-                    <p class="about_us_p"><%= @about.text %></p>
+                    <% if @locale == 'pt'%>
+                        <p class="about_us_p"><%= @about.text_pt %></p>
+                    <%else%>
+                        <p class="about_us_p"><%= @about.text_en %></p>
+                    <% end %>
                 </div>
         </div>
     </section>

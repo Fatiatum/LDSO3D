@@ -1,0 +1,13 @@
+pt:
+  catalog:
+    index:
+      title: "Experiencias"
+
+  about:
+    index:
+      about: "Sobre Nós"
+
+  shared:
+    footer:
+      follow: "Siga-nos aqui"
+      rights: "Os direitos estão reservados a"
