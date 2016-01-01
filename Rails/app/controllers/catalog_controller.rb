@@ -3,6 +3,7 @@ class CatalogController < ApplicationController
     @catalog = Catalog.first
     @products = Product.all
     @cont = Contact.new
+    @locale = params[:locale]
   end
 
   def show
@@ -31,7 +32,7 @@ class CatalogController < ApplicationController
 
   private
   	def catalog_params
-  		params.require(:catalog).permit(:text, :exp_text, :exp_title)
+  		params.require(:catalog).permit(:text_pt, :exp_text_pt, :exp_title_pt, :text_en, :exp_text_en, :exp_title_en)
   	end
 end
 

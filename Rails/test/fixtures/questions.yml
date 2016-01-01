@@ -1,11 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  answer: MyText
+  name_pt: MyString
+  name_en: MyString
+  answer_pt: MyString
+  answer_en: MyString
   faq_id: 
 
 two:
-  name: MyString
-  answer: MyText
+  name_pt: MyString
+  name_en: MyString
+  answer_pt: MyString
+  answer_en: MyString
   faq_id: 

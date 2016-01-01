@@ -14,9 +14,13 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="contact_title  wow fadeInUp animated">
-                        <h1>get in touch</h1>
+                        <h1><%= t ".title" %></h1>
                         <%= image_tag "shape.png" %>
-                        <p><%= @contact.text %></p>
+                        <% if @locale == 'pt'%>
+                            <p><%= @contact.text_pt %></p>
+                        <%else%>
+                            <p><%= @contact.text_en %></p>
+                        <% end %>
                     </div>
                 </div>
             </div>
@@ -25,16 +29,29 @@
             <div class="row">
                 <div class="col-md-3  wow fadeInLeft animated">
                     <div class="single_contact_info">
-                        <h2>Call Me</h2>
-                        <p><%= @contact.phone %></p>
+                        <h2><%= t ".phone" %></h2>
+                        <% if @locale == 'pt'%>
+                            <p><%= @contact.phone_pt %></p>
+                        <%else%>
+                            <p><%= @contact.phone_en %></p>
+                        <% end %>
+                        
                     </div>
                     <div class="single_contact_info">
-                        <h2>Email Me</h2>
-                        <p><%= @contact.email %></p>
+                        <h2><%= t ".email" %></h2>
+                        <% if @locale == 'pt'%>
+                            <p><%= @contact.email_pt %></p>
+                        <%else%>
+                            <p><%= @contact.email_pt %></p>
+                        <% end %>
                     </div>
                     <div class="single_contact_info">
-                        <h2>Address</h2>
-                        <p><%= @contact.address %></p>
+                        <h2><%= t ".address" %></h2>
+                        <% if @locale == 'pt'%>
+                            <p><%= @contact.address_pt %></p>
+                        <%else%>
+                            <p><%= @contact.address_en %></p>
+                        <% end %>
                     </div>
                 </div>
                 <div class="col-md-9  wow fadeInRight animated">

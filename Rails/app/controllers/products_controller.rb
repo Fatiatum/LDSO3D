@@ -3,10 +3,12 @@ class ProductsController < ApplicationController
 	def index
 		@products = Product.all
 		@catalog = Catalog.first
+		@locale = params[:locale]
 	end
 
 	def show
 		@product = Product.find(params[:id])
+		@locale = params[:locale]
 	end
 
 	def new	
@@ -47,7 +49,7 @@ class ProductsController < ApplicationController
 	    end
 
 		def product_params
-			params.require(:product).permit(:name, :description, :image, experiences_attributes: [ :id, :name, :_destroy ])
+			params.require(:product).permit(:name_pt, :description_pt, :name_en, :description_en, :image, experiences_attributes: [ :id, :name_pt, :name_en, :_destroy ])
 		end
 
 end

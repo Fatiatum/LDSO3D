@@ -1,21 +1,29 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  text: MyString
-  phone: MyString
-  email: MyText
-  address: MyString
-  from_mail: MyText
+  text_pt: MyString
+  text_en: MyString
+  phone_pt: MyString
+  phone_en: MyString
+  email_pt: MyString
+  email_en: MyString
+  address_pt: MyString
+  address_en: MyString
+  from_mail: MyString
   name: MyString
   subject: MyString
-  msg: MyText
+  msg: MyString
 
 two:
-  text: MyString
-  phone: MyString
-  email: MyText
-  address: MyString
-  from_mail: MyText
+  text_pt: MyString
+  text_en: MyString
+  phone_pt: MyString
+  phone_en: MyString
+  email_pt: MyString
+  email_en: MyString
+  address_pt: MyString
+  address_en: MyString
+  from_mail: MyString
   name: MyString
   subject: MyString
-  msg: MyText
+  msg: MyString

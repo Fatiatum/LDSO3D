@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151229234715) do
+ActiveRecord::Schema.define(version: 20151231122818) do
 
   create_table "abouts", force: :cascade do |t|
     t.string   "text_pt"
@@ -22,28 +22,36 @@ ActiveRecord::Schema.define(version: 20151229234715) do
   end
 
   create_table "catalogs", force: :cascade do |t|
-    t.string   "text"
-    t.string   "exp_title"
-    t.string   "exp_text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "text_pt"
+    t.string   "text_en"
+    t.string   "exp_title_pt"
+    t.string   "exp_title_en"
+    t.string   "exp_text_pt"
+    t.string   "exp_text_en"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "contacts", force: :cascade do |t|
-    t.string   "text"
-    t.string   "phone"
-    t.text     "email"
-    t.string   "address"
-    t.text     "from_mail"
+    t.string   "text_pt"
+    t.string   "text_en"
+    t.string   "phone_pt"
+    t.string   "phone_en"
+    t.string   "email_pt"
+    t.string   "email_en"
+    t.string   "address_pt"
+    t.string   "address_en"
+    t.string   "from_mail"
     t.string   "name"
     t.string   "subject"
-    t.text     "msg"
+    t.string   "msg"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "experiences", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name_pt"
+    t.string   "name_en"
     t.integer  "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -57,16 +65,20 @@ ActiveRecord::Schema.define(version: 20151229234715) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
+    t.string   "name_pt"
+    t.string   "name_en"
+    t.string   "description_pt"
+    t.string   "description_en"
     t.string   "image"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "questions", force: :cascade do |t|
-    t.string   "name"
-    t.text     "answer"
+    t.string   "name_pt"
+    t.string   "name_en"
+    t.string   "answer_pt"
+    t.string   "answer_en"
     t.integer  "faq_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

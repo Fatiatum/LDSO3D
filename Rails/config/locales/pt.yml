@@ -2,12 +2,55 @@ pt:
   catalog:
     index:
       title: "Experiencias"
+      none:  "Nenhum produto foi ainda inserido"
 
   about:
     index:
       about: "Sobre Nós"
 
+  faq:
+    index:
+      title: "FAQ"
+      none:  "Nenhuma pergunta foi inserida"
+
+  products:
+    show:
+      none:  "Nenhuma experiencia foi inserida"
+
+  contacts:
+    index:
+      title:   "Entre em contacto"
+      phone:   "Número de Contacto"
+      email:   "E-mail"
+      address: "Morada"
+    form:
+      send: "Enviar"
+
   shared:
     footer:
       follow: "Siga-nos aqui"
       rights: "Os direitos estão reservados a"
+    experience_form:
+      contact: "Contacte-nos"
+      create:  "Crie a sua experiencia"
+      msg:     "Diga-nos que tipo de experiencia gostaria de viver"
+      close:   "Fechar"
+      send:    "Enviar"
+    navbar:
+      catalog:  "Catálogo"
+      faq:      "FAQ"
+      about:    "Sobre nós"
+      contacts: "Contactos"
+
+  activerecord:
+    attributes:
+      catalog: 
+        name:      "Nome"
+        from_mail: "E-mail"
+        subject:   "Assunto"
+        msg:       "Mensagem" 
+      contacts: 
+        name:      "Nome"
+        from_mail: "E-mail"
+        subject:   "Assunto"
+        msg:       "Mensagem"

@@ -1,6 +1,7 @@
 class FaqController < ApplicationController
   def index
     @faq = Faq.first
+    @locale = params[:locale]
   end
 
   def show
@@ -22,6 +23,6 @@ class FaqController < ApplicationController
 
   private
   	def faq_params
-  		params.require(:faq).permit(questions_attributes: [ :id, :name, :answer, :_destroy ])
+  		params.require(:faq).permit(questions_attributes: [ :id, :name_pt, :answer_pt, :name_en, :answer_en, :_destroy ])
   	end
 end

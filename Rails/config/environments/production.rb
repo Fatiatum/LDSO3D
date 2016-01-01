@@ -66,7 +66,7 @@ Rails.application.configure do
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
-  config.i18n.fallbacks = true
+config.i18n.fallbacks = true
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
@@ -76,4 +76,13 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.after_initialize do
+    ActiveMerchant::Billing::Base.mode = :production
+    ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
+      :login => "ldso3d_api1.gmail.com",
+      :password => "5684QVZHC3FHVGKR",
+      :signature => "AFcWxV21C7fd0v3bYYYRCpSSRl31Aft2a5RJX4y2OvP1-d6zwW2bFHOy"
+      )
+  end
 end

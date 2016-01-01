@@ -2,6 +2,7 @@ class ContactsController < ApplicationController
   def index
     @contact = Contact.first
     @cont = Contact.new
+    @locale = params[:locale]
   end
 
   def show
@@ -31,7 +32,7 @@ class ContactsController < ApplicationController
 
   private
     def contact_params_to_save
-      params.require(:contact).permit(:text, :phone, :email, :address)
+      params.require(:contact).permit(:text_pt, :phone_pt, :email_pt, :address_pt, :text_en, :phone_en, :email_en, :address_en)
     end
 
     def contact_params

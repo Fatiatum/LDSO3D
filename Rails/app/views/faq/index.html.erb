@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="about_title  wow fadeInUp animated">
-                        <h2>FAQ</h2>
+                        <h2><%= t ".title" %></h2>
                         <%= image_tag "shape.png" %>
                     </div>
                 </div>
@@ -26,22 +26,37 @@
             <% if @faq.questions.any? %>
             <div class="panel-group  wow fadeInLeft animated" id="accordion">
                 <% @faq.questions.each do |question| %>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><%= question.name %></a>
-                        </h4>
-                    </div>
-                    <div id="collapseOne" class="panel-collapse collapse in">
-                        <div class="panel-body">
-                            <p><%= question.answer %></p>
+                <% if @locale == 'pt'%>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><%= question.name_pt %></a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <p><%= question.answer_pt %></p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <%else%>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><%= question.name_en %></a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <p><%= question.answer_en %></p>
+                            </div>
+                        </div>
+                    </div>
+                <% end %> 
                 <% end %>
             </div>
             <% else %>
-            <p>none available</p>
+            <p><%= t ".none" %></p>
             <% end %>
         </div>
     </section>

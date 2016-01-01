@@ -2,10 +2,14 @@
 
   <%= f.fields_for :questions do |question| %>
   <p>
-    <%= question.label :name %><br />
-    <%= question.text_field :name %><br />
-    <%= question.label :answer %><br />
-    <%= question.text_area :answer %><br />
+    <%= question.label :name_pt %><br />
+    <%= question.text_field :name_pt %><br />
+    <%= question.label :name_en %><br />
+    <%= question.text_field :name_en %><br />
+    <%= question.label :answer_pt %><br />
+    <%= question.text_area :answer_pt %><br />
+    <%= question.label :answer_en %><br />
+    <%= question.text_area :answer_en %><br />
     <%= question.check_box :_destroy %>
     <%= question.label :_destroy, 'remove' %>
   </p>

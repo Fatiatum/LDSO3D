@@ -15,7 +15,17 @@ Welcome.create(title_pt: 'AS SUAS EXPERIENCIAS NO PORTO', title_en: 'YOUR OPORTO
 About.create(text_pt: 'TESTE DO ABOUT', text_en: 'TESTING ABOUT DATABASE WITH THIS TEXT', 
 			 image: 'w2.jpg')
 
-Contact.create(text: 'CONTACTS TEXT EXAMPLE', phone: '229876123', email: 'jorge.filipe.teixeira.1@gmail.com', address: 'R. do exemplo, nº 123 1º esquerdo direito')
-Catalog.create(text: 'EXAMPLE TEXT', exp_title: 'LOOKING FOR PERSONALIZED EXPERIENCES?', exp_text: 'Please tell us what you want in your personalized experience.')
+Contact.create(text_pt: 'CONTACTS TEXT EXAMPLE', text_en: 'CONTACTS TEXT EXAMPLE',
+	phone_pt: '229876123', phone_en: '229876123', 
+	email_pt: 'jorge.filipe.teixeira.1@gmail.com', email_en: 'jorge.filipe.teixeira.1@gmail.com',
+	address_pt: 'R. do exemplo, nº 123 1º esquerdo direito', address_en: 'R. do exemplo, nº 123 1º esquerdo direito')
+
+Catalog.create(text_pt: 'TEXTO DE EXEMPLO', text_en: 'EXAMPLE TEXT',
+	exp_title_pt: 'Á PROCURA DE EXPERIENCIAS PERSONALIZADAS?', exp_title_en: 'LOOKING FOR PERSONALIZED EXPERIENCES?', 
+	exp_text_pt: 'Diga-nos o que procura na sua experiencia.', exp_text_en: 'Please tell us what you want in your personalized experience.')
+
 Faq.create()
-Question.create(name:'Pergunta 1', answer:'Resposta', faq_id:'1')
+
+Question.create(name_pt:'Primeira Pergunta', name_en:'First Question',
+	answer_pt:'Resposta', answer_en:'Answer',
+	faq_id:'1')

@@ -16,27 +16,43 @@
                     <div class="work_title  wow fadeInUp animated">
                         <h1><%= t ".title" %></h1>
                         <%= image_tag "shape.png" %>
-                        <p><%= @catalog.text %></p>
+                        <% if @locale == 'pt'%>
+                            <p><%= @catalog.text_pt %></p>
+                        <%else%>
+                            <p><%= @catalog.text_en %></p>
+                        <% end %>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container-fluid">
             <div class="row">
+            <% if @products.any? %>
                 <% @products.each do |product| %>
                     <div class="col-md-4 no_padding portfolio-item romantic">
                         <div class="single_image">
                             <%= image_tag product.image %>
-                            <div class="image_overlay">
-                                <%= link_to(product) do %>
-                                    <h2 id="product-title"><%= product.name %></h2>
-                                <% end %>
-                                <td><%= link_to 'Edit', edit_product_path(product) %></td>
-                                <h4><%= product.description %></h4>
-                            </div>
+                            <% if @locale == 'pt'%>
+                                <div class="image_overlay">
+                                    <%= link_to(product) do %>
+                                        <h2 id="product-title"><%= product.name_pt %></h2>
+                                    <% end %>
+                                    <h4><%= product.description_pt %></h4>
+                                </div>
+                            <%else%>
+                                <div class="image_overlay">
+                                    <%= link_to(product) do %>
+                                        <h2 id="product-title"><%= product.name_en %></h2>
+                                    <% end %>
+                                    <h4><%= product.description_en %></h4>
+                                </div>
+                            <% end %>
                         </div>
                     </div>
                 <% end %>
+            <% else %>
+                <p><%= t ".none" %></p>
+            <% end %>
             </div>          
         </div>
     </section>

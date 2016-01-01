@@ -23,12 +23,55 @@ en:
   catalog:
     index:
       title: "Experiences"
+      none:  "None Product Available"
 
   about:
     index:
       about: "About Us"
 
+  faq:
+    index:
+      title: "FAQ"
+      none:  "None Question Available"
+
+  products:
+    show:
+      none:  "None Experience Available"
+
+  contacts:
+    index:
+      title:   "Get in touch"
+      phone:   "Phone Number"
+      email:   "E-mail"
+      address: "Address"
+    form:
+      send: "Send"
+
   shared:
     footer:
       follow: "Follow Us Here"
       rights: "All Rights reserved to"
+    experience_form:
+      contact: "Contact us"
+      create:  "Create your own experience"
+      msg:     "Tell us the kind of experience you would want to live"
+      close:   "Close"
+      send:    "Send"
+    navbar:
+      catalog:  "Catalog"
+      faq:      "FAQ"
+      about:    "About"
+      contacts: "Contacts"
+
+  activerecord:
+    attributes:
+      catalog: 
+        name:      "Name"
+        from_mail: "E-mail"
+        subject:   "Subject"
+        msg:       "Message"
+      contacts: 
+        name:      "Name"
+        from_mail: "E-mail"
+        subject:   "Subject"
+        msg:       "Message"
