@@ -3,9 +3,9 @@
 one:
   name_pt: MyString
   name_en: MyString
-  product_id: 
+  product_id: 1
 
 two:
   name_pt: MyString
   name_en: MyString
-  product_id: 
+  product_id: 2

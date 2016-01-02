@@ -47,8 +47,8 @@ class ProductTest < ActiveSupport::TestCase
   	assert product.save, "Unable to save product"
   end
 
-  #test "should contain only experiences that belong to product" do
-  #  product = Product.new
-  #  assert product.experiences.all? {|e| e.product == product}
-  #end
+  test "should contain only experiences that belong to product" do
+    product = Product.new
+    assert product.experiences.all? {|e| e.product == product}
+  end
 end

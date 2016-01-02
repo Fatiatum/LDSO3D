@@ -5,11 +5,11 @@ one:
   name_en: MyString
   answer_pt: MyString
   answer_en: MyString
-  faq_id: 
+  faq_id: 1
 
 two:
   name_pt: MyString
   name_en: MyString
   answer_pt: MyString
   answer_en: MyString
-  faq_id: 
+  faq_id: 2
