@@ -80,9 +80,9 @@ config.i18n.fallbacks = true
   config.after_initialize do
     ActiveMerchant::Billing::Base.mode = :production
     ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
-      :login => "seller-ldos3d_api2.gmail.com",
-      :password => "624M9K87RDPTSEVK",
-      :signature => "AFcWxV21C7fd0v3bYYYRCpSSRl31AY5tO0rIiFCYbCy1iEuTvA5Ctr2l"
+      :login => "ldso3-seller_api2.gmail.com",
+      :password => "HYSZR6AYM68UUEK6",
+      :signature => "AFcWxV21C7fd0v3bYYYRCpSSRl31A97AvNybP42TqmrSNdSA2wyD.5eJ"
       )
   end
 end

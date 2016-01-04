@@ -1,0 +1,13 @@
+language: ruby
+
+rvm:
+  - 2.2.3
+
+script:
+  - bundle install
+  - rake db:drop:all
+  - rake db:create:all
+  - rake db:migrate
+  - rake db:seed
+
+
