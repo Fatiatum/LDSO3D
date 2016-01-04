@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @order_transaction.order_id %>
+</p>
+
+<p>
+  <strong>Action:</strong>
+  <%= @order_transaction.action %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @order_transaction.amount %>
+</p>
+
+<p>
+  <strong>Success:</strong>
+  <%= @order_transaction.success %>
+</p>
+
+<p>
+  <strong>Authorization:</strong>
+  <%= @order_transaction.authorization %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @order_transaction.message %>
+</p>
+
+<p>
+  <strong>Params:</strong>
+  <%= @order_transaction.params %>
+</p>
+
+<%= link_to 'Edit', edit_order_transaction_path(@order_transaction) %> |
+<%= link_to 'Back', order_transactions_path %>

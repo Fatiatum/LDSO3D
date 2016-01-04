@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-	before_action :set_product, only: [:show, :edit, :update, :destroy]
+	before_filter :authorize, only: [:edit, :new]
+
 	def index
 		@products = Product.all
 		@catalog = Catalog.first
@@ -9,13 +10,11 @@ class ProductsController < ApplicationController
 	def show
 		@product = Product.find(params[:id])
 		@locale = params[:locale]
+		@experiences = Experience.where(:Product_id => @product.id)
 	end
 
 	def new	
 		@product = Product.new
-		3.times do
-		    experience = @product.experiences.build
-		end
 	end
 
 	def edit
@@ -23,33 +22,41 @@ class ProductsController < ApplicationController
 	end
 
 	def create
-	    @product = Product.new(product_params)
-	    
-	    if @product.save
-	      redirect_to @product
-	    else
-		  render 'new'
+		@product = Product.new(product_params)
+
+		if @product.save
+			redirect_to new_experience_path(:Product_id => @product.id)
+		else
+			render 'new'
 		end
 
 	end
 
 	def update
-	  @product = Product.find(params[:id])
-	 
-	  if @product.update(product_params)
-	    redirect_to @product
-	  else
-	    render 'edit'
-	  end
+		@product = Product.find(params[:id])
+
+		if @product.update(product_params)
+			redirect_to @product
+		else
+			render 'edit'
+		end
 	end
 
-	private 
-	    def set_product
-	      @product = Product.find(params[:id])
-	    end
+	# DELETE /experiences/1
+  	# DELETE /experiences/1.json
+  	def destroy
+  		@product = Product.find(params[:id])
+  		@product.destroy
+  		respond_to do |format|
+  			format.html { redirect_to catalog_index_path, notice: 'Product was successfully destroyed.' }
+  			format.json { head :no_content }
+  		end
+ 	end
 
-		def product_params
-			params.require(:product).permit(:name_pt, :description_pt, :name_en, :description_en, :image, experiences_attributes: [ :id, :name_pt, :name_en, :_destroy ])
-		end
+  private 
+
+  def product_params
+  	params.require(:product).permit(:name_pt, :description_pt, :name_en, :description_en, :image)
+  end
 
 end

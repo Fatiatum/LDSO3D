@@ -1,4 +1,6 @@
 class CatalogController < ApplicationController
+  before_filter :authorize, only: [:edit]
+  
   def index
     @catalog = Catalog.first
     @products = Product.all

@@ -10,14 +10,26 @@
       </ul>
     </div>
   <% end %>
-
+  <%= f.hidden_field :Product_id %>
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :program_type %><br>
+    <%= f.text_field :program_type %>
   </div>
   <div class="field">
-    <%= f.label :product_id %><br>
-    <%= f.text_field :product_id %>
+    <%= f.label :package_type %><br>
+    <%= f.text_field :package_type %>
+  </div>
+  <div class="field">
+    <%= f.label :description_pt %><br>
+    <%= f.text_field :description_pt %>
+  </div>
+  <div class="field">
+    <%= f.label :description_en %><br>
+    <%= f.text_field :description_en %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
   </div>
   <div class="actions">
     <%= f.submit %>

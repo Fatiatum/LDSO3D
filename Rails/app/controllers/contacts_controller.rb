@@ -1,4 +1,6 @@
 class ContactsController < ApplicationController
+  before_filter :authorize, only: [:edit]
+  
   def index
     @contact = Contact.first
     @cont = Contact.new

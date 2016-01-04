@@ -55,9 +55,9 @@ Rails.application.configure do
   config.after_initialize do
     ActiveMerchant::Billing::Base.mode = :test
     ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
-      :login => "ldso3d_api1.gmail.com",
-      :password => "5684QVZHC3FHVGKR",
-      :signature => "AFcWxV21C7fd0v3bYYYRCpSSRl31Aft2a5RJX4y2OvP1-d6zwW2bFHOy"
+      :login => "jorge.filipe.teixeira.1-facilitator@gmail.com",
+      :password => "EDicP65KFxPOxCW7BIZ07rWUFpt6nVt2EKXTSKv0YNbsBY2AX8mlHVvhkwnhoMp-bKGvI-CK91Kk2T9w",
+      :signature => "AWiq2jK_EKO36x0gJEUuvgA8AxDOqNkdmmAteIg4LTULkMv8nPjJlhCs7SffVWF_X34lETPmFGpSEOO1"
     )
   end
   

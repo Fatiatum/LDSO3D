@@ -20,6 +20,12 @@
                 <li><%= link_to(t(".contacts"), contacts_path) %></li>
                 <li> <p> <%= link_to_unless_current "EN", locale: "en" %> | 
                         <%= link_to_unless_current "PT", locale: "pt" %></p></li>
+                <% if current_user%>
+                    Logged in
+                    <%= link_to "Log Out", session_path("current"), method: "delete" %>
+                <% else %>
+                    Not Logged in
+                <% end %>        
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container -->

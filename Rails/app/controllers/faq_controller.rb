@@ -1,4 +1,6 @@
 class FaqController < ApplicationController
+  before_filter :authorize, only: [:edit, :new]
+
   def index
     @faq = Faq.first
     @locale = params[:locale]

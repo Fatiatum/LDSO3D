@@ -1,5 +1,6 @@
 class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize, only: [:edit, :index, :new, :show]
 
   # GET /experiences
   # GET /experiences.json
@@ -14,7 +15,9 @@ class ExperiencesController < ApplicationController
 
   # GET /experiences/new
   def new
-    @experience = Experience.new
+    @experience = Experience.new()
+    @experience.Product_id = params[:Product_id]
+    
   end
 
   # GET /experiences/1/edit
@@ -25,10 +28,11 @@ class ExperiencesController < ApplicationController
   # POST /experiences.json
   def create
     @experience = Experience.new(experience_params)
-
+    @product = Product.find(@experience.Product_id)
+    
     respond_to do |format|
       if @experience.save
-        format.html { redirect_to @experience, notice: 'Experience was successfully created.' }
+        format.html { redirect_to @product, notice: 'Experience was successfully created.' }
         format.json { render :show, status: :created, location: @experience }
       else
         format.html { render :new }
@@ -69,6 +73,6 @@ class ExperiencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def experience_params
-      params.require(:experience).permit(:name_pt, :name_en, :product_id)
+      params.require(:experience).permit(:program_type, :package_type, :description_pt, :description_en, :price, :Product_id)
     end
 end

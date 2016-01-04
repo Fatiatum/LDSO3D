@@ -1,15 +1,22 @@
 Rails.application.routes.draw do
+  resources :entries, defaults: { format: 'json' }
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
+    resources :users
+    resources :sessions
+    resources :order_transactions
+    resources :orders
+    resources :experiences
     get 'welcome/index'
     resources :products
     resources :questions
-    resources :experiences
     resources :about
     resources :contacts
     resources :welcome
     resources :faq
     resources :catalog
     root 'welcome#index'
+    get  'admin', to: 'sessions#new'
+    get  'logout', to: 'session#destroy', as: 'logout'
     get  'home', to: 'welcome#index'
     get  'home/edit', to: redirect("welcome/index/edit"), as: 'home/edit'
     get '/:locale' => 'welcome#index'

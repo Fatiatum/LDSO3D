@@ -1,4 +1,6 @@
 class AboutController < ApplicationController
+  before_filter :authorize, only: [:edit]
+
   def index
     @about = About.first
     @locale = params[:locale]

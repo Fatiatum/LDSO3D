@@ -1,4 +1,6 @@
 class WelcomeController < ApplicationController
+  before_filter :authorize, only: [:edit]
+
   def index
     @welcome = Welcome.first
     @locale = params[:locale]

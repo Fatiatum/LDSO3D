@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151231122818) do
+ActiveRecord::Schema.define(version: 20160103223801) do
 
   create_table "abouts", force: :cascade do |t|
     t.string   "text_pt"
@@ -50,18 +50,44 @@ ActiveRecord::Schema.define(version: 20151231122818) do
   end
 
   create_table "experiences", force: :cascade do |t|
-    t.string   "name_pt"
-    t.string   "name_en"
-    t.integer  "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "program_type"
+    t.string   "package_type"
+    t.string   "description_pt"
+    t.string   "description_en"
+    t.string   "price"
+    t.integer  "Product_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
-  add_index "experiences", ["product_id"], name: "index_experiences_on_product_id"
+  add_index "experiences", ["Product_id"], name: "index_experiences_on_Product_id"
 
   create_table "faqs", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "order_transactions", force: :cascade do |t|
+    t.integer  "order_id"
+    t.string   "action"
+    t.string   "amount"
+    t.boolean  "success"
+    t.string   "authorization"
+    t.string   "message"
+    t.text     "params"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "experience_id"
+    t.string   "ip_address"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "card_type"
+    t.date     "card_expires_on"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "products", force: :cascade do |t|
@@ -85,6 +111,14 @@ ActiveRecord::Schema.define(version: 20151231122818) do
   end
 
   add_index "questions", ["faq_id"], name: "index_questions_on_faq_id"
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "welcomes", force: :cascade do |t|
     t.string   "title_pt"

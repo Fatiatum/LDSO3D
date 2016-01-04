@@ -18,28 +18,27 @@
 
 
 <p>
-  <%= f.label :name %><br>
-  <%= f.text_field :name %>
+  <%= f.label :name_pt %><br>
+  <%= f.text_field :name_pt %>
+</p>
+<p>
+  <%= f.label :name_en %><br>
+  <%= f.text_field :name_en %>
 </p>
 
 <p>
-  <%= f.label :description %><br>
-  <%= f.text_area :description %>
+  <%= f.label :description_pt %><br>
+  <%= f.text_area :description_pt %>
+</p>
+<p>
+  <%= f.label :description_en %><br>
+  <%= f.text_area :description_en %>
 </p>
 
 <p>
   <%= f.label :image %><br>
   <%= f.file_field :image %>
 </p>
-
-<%= f.fields_for :experiences do |experience| %>
-<p>
-  <%= experience.label :name %><br />
-  <%= experience.text_field :name %><br />
-  <%= experience.check_box :_destroy %>
-  <%= experience.label :_destroy, 'remove' %>
-</p>
-<% end %>
 
 <p>
   <%= f.submit %>

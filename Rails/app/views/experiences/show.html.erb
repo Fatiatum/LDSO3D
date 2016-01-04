@@ -1,13 +1,33 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @experience.name %>
+  <strong>Program type:</strong>
+  <%= @experience.program_type %>
+</p>
+
+<p>
+  <strong>Package type:</strong>
+  <%= @experience.package_type %>
+</p>
+
+<p>
+  <strong>Description pt:</strong>
+  <%= @experience.description_pt %>
+</p>
+
+<p>
+  <strong>Description en:</strong>
+  <%= @experience.description_en %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @experience.price %>
 </p>
 
 <p>
   <strong>Product:</strong>
-  <%= @experience.product %>
+  <%= @experience.Product %>
 </p>
 
 <%= link_to 'Edit', edit_experience_path(@experience) %> |
