@@ -1,4 +1,13 @@
-<h1>EDIT HOME PAGE</h1>
+<header>
+<div><%= render 'shared/admin_navbar' %>
+</div>
+</header>
+<section class="about_us_area" id="ABOUT">
+<div>
+
+
+<h1 style="margin-top: 10%">EDIT HOME PAGE</h1>
+
  
 <%= form_for @welcome do |f| %>
  
@@ -68,4 +77,5 @@
 <% end %>
  
 <%= link_to 'Back',   home_path   %>
-
+</div>
+</section>

@@ -1,0 +1,63 @@
+<nav  class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <p class="navbar-brand"><%= link_to "YourOportoParty", root_path %></p>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><%= link_to(t(".home_edit"), edit_welcome_path(1)) %></li>
+                <li><%= link_to(t(".product_new"), new_product_path) %></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <%= t(".catalog") %> <span class="caret"></span> </a>
+                    
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><%= link_to(t(".catalog_view"), catalog_index_path) %></li>
+                        <li><%= link_to(t(".catalog_edit"), edit_catalog_path(1)) %></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <%= t(".faq") %> <span class="caret"></span> </a>
+                    
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><%= link_to(t(".faq_view"), faq_index_path) %></li>
+                        <li><%= link_to(t(".faq_edit"), edit_faq_path(1)) %></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <%= t(".about") %> <span class="caret"></span> </a>
+                    
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><%= link_to(t(".about_view"), about_index_path) %></li>
+                        <li><%= link_to(t(".about_edit"), edit_about_path(1)) %></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <%= t(".contacts") %> <span class="caret"></span> </a>
+                    
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><%= link_to(t(".contacts_view"), contacts_path) %></li>
+                        <li><%= link_to(t(".contacts_edit"), edit_contact_path(1)) %></li>
+                    </ul>
+                </li>
+                <li>
+                    <%= link_to_unless_current "EN", locale: "en" %> |
+                </li> 
+                <li>
+                    <%= link_to_unless_current "PT", locale: "pt" %>
+                </li>
+                <% if current_user%>
+                    <%= link_to "Log Out", session_path("current"), method: "delete" %>
+                <% end %>        
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+</nav>  

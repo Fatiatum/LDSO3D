@@ -3,7 +3,11 @@
 <!--NAVBAR-->
 <header id="HOME" style="background-position: 50% -125px;">
 	<div class="section_overlay">
-		<%= render 'shared/navbar' %>
+		<% if current_user%>
+			<%= render 'shared/admin_navbar'%>
+		<% else %>
+			<%= render 'shared/navbar' %>
+		<% end %>
 	</div>        
 </header>
 <!--/NAVBAR--> 
@@ -42,11 +46,11 @@
 				<tbody>
 					<% @experiences.each do |experience| %>
 					<tr>
-					<% if @locale == 'pt'%>
+						<% if @locale == 'pt'%>
 						<td><%= experience.description_pt %></td>
-					<%else%>
+						<%else%>
 						<td><%= experience.description_en %></td>
-					<% end %>
+						<% end %>
 						<td><%= experience.price %></td>
 						<td><%= link_to 'Edit', edit_experience_path(experience) %></td>
 						<td><%= link_to 'Destroy', experience, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -3,7 +3,11 @@
     <!--NAVBAR-->
     <header id="HOME" style="background-position: 50% -125px;">
         <div class="section_overlay">
-            <%= render 'shared/navbar' %>
+             <% if current_user%>
+                <%= render 'shared/admin_navbar'%>
+            <% else %>
+                <%= render 'shared/navbar' %>
+            <% end %>
         </div>        
     </header>
     <!--/NAVBAR-->

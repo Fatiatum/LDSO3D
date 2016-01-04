@@ -62,6 +62,23 @@ en:
       faq:      "FAQ"
       about:    "About"
       contacts: "Contacts"
+    admin_navbar:
+      catalog:  "Catalog"
+      faq:      "FAQ"
+      about:    "About"
+      contacts: "Contacts"
+      home_edit: "Edit Home"
+      catalog_edit: "Edit Catalog"
+      catalog_view: "View Catalog"
+      faq_edit: "Edit FAQ"
+      faq_view: "View FAQ"
+      about_edit: "Edit About"
+      about_view: "View About"
+      contacts_edit: "Edit Contacts"
+      contacts_view: "View Contacts"
+      product: "Product"
+      product_edit: "Edit Product"
+      product_new: "New Product"
 
   activerecord:
     attributes:

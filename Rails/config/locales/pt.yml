@@ -41,6 +41,23 @@ pt:
       faq:      "FAQ"
       about:    "Sobre nós"
       contacts: "Contactos"
+    admin_navbar:
+      catalog:  "Catálogo"
+      faq:      "FAQ"
+      about:    "Sobre nós"
+      contacts: "Contactos"
+      home_edit: "Editar Home"
+      catalog_edit: "Editar Catálogo"
+      catalog_view: "Ver Catálogo"
+      faq_edit: "Editar FAQ"
+      faq_view: "Ver FAQ"
+      about_edit: "Editar About"
+      about_view: "Ver About"
+      contacts_edit: "Editar Contactos"
+      contacts_view: "Ver Contactos"
+      product: "Produto"
+      product_edit: "Editar Produto"
+      product_new: "Novo Produto"
 
   activerecord:
     attributes:
