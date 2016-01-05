@@ -17,8 +17,9 @@ class ContactsController < ApplicationController
 
   def create 
     @contact = Contact.new(contact_params)
-    @mail = Contact.first.email
-    ManageMailer.contact(@contact, @mail).deliver_now
+    @from_mail = @contact.from_mail
+    @mail = User.last.email
+    ManageMailer.contact(@contact, @from_mail).deliver_now 
 
     redirect_to @contact 
   end

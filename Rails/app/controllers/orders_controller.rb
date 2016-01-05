@@ -16,7 +16,9 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new()
     @order.experience_id = params[:experience_id]
-    @order.ip_address = request.remote_ip
+    @order.program_type = params[:program_type]
+    @order.package_type = params[:package_type]
+    @order.price = Experience.find(@order.experience_id).price
   end
 
   # GET /orders/1/edit
@@ -27,33 +29,15 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
-    @experience = Experience.find(8)
+    @experience = Experience.find(@order.experience_id)
 
     respond_to do |format|
       if @order.save
-        if @order.purchase(@experience.price)
-          format.html { render :success, notice: 'Order was successfully created.' }
-          format.json { render :show, status: :created, location: @order }
-        else
-          format.html { render :failure , notice: 'Order was not successfully created.'}
-          format.json { render json: @order.errors, status: :unprocessable_entity }
-        end
+        ManageMailer.order(@experience, @order).deliver_now
+        format.html { redirect_to home_url, notice: 'Order was successfully created.' }
+        format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /orders/1
-  # PATCH/PUT /orders/1.json
-  def update
-    respond_to do |format|
-      if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
-        format.json { render :show, status: :ok, location: @order }
-      else
-        format.html { render :edit }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
@@ -64,7 +48,7 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
+      format.html { redirect_to home_url, notice: 'Order was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -77,6 +61,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:experience_id, :ip_address, :first_name, :last_name, :card_type, :card_expires_on, :card_number, :card_verification)
+      params.require(:order).permit(:experience_id, :name, :email, :program_type, :package_type, :price)
     end
-  end
+end

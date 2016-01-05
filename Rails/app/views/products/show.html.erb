@@ -54,7 +54,7 @@
 						<td><%= experience.price %></td>
 						<td><%= link_to 'Edit', edit_experience_path(experience) %></td>
 						<td><%= link_to 'Destroy', experience, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-						<td><%= link_to 'Checkout', new_order_path(:experience_id => experience.id) %></td>
+						<td><%= link_to 'Checkout', new_order_path(:experience_id => experience.id, :program_type => "Dia", :package_type => "Luxo") %></td>
 					</tr>
 					<% end %>
 				</tbody>

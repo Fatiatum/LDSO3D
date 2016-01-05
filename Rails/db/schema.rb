@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160103223801) do
+ActiveRecord::Schema.define(version: 20160104234255) do
 
   create_table "abouts", force: :cascade do |t|
     t.string   "text_pt"
@@ -81,13 +81,13 @@ ActiveRecord::Schema.define(version: 20160103223801) do
 
   create_table "orders", force: :cascade do |t|
     t.integer  "experience_id"
-    t.string   "ip_address"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "card_type"
-    t.date     "card_expires_on"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "name"
+    t.string   "email"
+    t.string   "program_type"
+    t.string   "package_type"
+    t.string   "price"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "products", force: :cascade do |t|

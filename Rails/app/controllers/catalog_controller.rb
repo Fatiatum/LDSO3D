@@ -17,10 +17,6 @@ class CatalogController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(contact_params) 
-    @mail = Contact.first.email 
-    ManageMailer.contact(@contact, @mail).deliver_now 
-
   end
 
   def update

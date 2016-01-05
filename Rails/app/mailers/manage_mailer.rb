@@ -1,17 +1,23 @@
 class ManageMailer < ApplicationMailer
-
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.manage_mailer.contact.subject
-  #
-  def contact(cont, email)
-    @email = email
+  def contact(cont, from_email)
+    @from_email = from_email
     @contact = cont
-    @name = cont.name
+    @mail = User.last.email
     @subject = cont.subject
 
-    mail to: @email,
-         subject: @subject
+    mail  to: @mail,
+          from: @mail,
+          subject: @subject
   end
-end
+
+  def order(experience, client)
+  	@client = client
+  	@experience = experience
+  	@product = Product.find(@experience.Product_id)
+  	@mail = User.last.email
+  	@number = Order.all.size
+    mail  to: @mail,
+          from: @mail,
+          subject: "Order Number: " + @number.to_s
+  end
+end 

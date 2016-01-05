@@ -2,11 +2,11 @@ class CreateOrders < ActiveRecord::Migration
   def change
     create_table :orders do |t|
       t.integer :experience_id
-      t.string :ip_address
-      t.string :first_name
-      t.string :last_name
-      t.string :card_type
-      t.date :card_expires_on
+      t.string :name
+      t.string :email
+      t.string :program_type
+      t.string :package_type
+      t.string :price
 
       t.timestamps null: false
     end
