@@ -24,11 +24,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="bs-example">
+            <div bs-example>
             <% if @faq.questions.any? %>
-            <div class="panel-group  wow fadeInLeft animated" id="accordion">
+            <div class="panel-group col-md-8 col-md-offset-2 wow fadeInLeft animated" id="accordion">
                 <% @faq.questions.each do |question| %>
                 <% if @locale == 'pt'%>
                     <div class="panel panel-default">
@@ -63,6 +61,9 @@
             <p><%= t ".none" %></p>
             <% end %>
         </div>
+        </div>
+
+        
     </section>
     <!--/FAQ-->
 

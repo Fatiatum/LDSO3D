@@ -48,16 +48,14 @@
                         <li><%= link_to(t(".contacts_edit"), edit_contact_path(1)) %></li>
                     </ul>
                 </li>
-                <li>
-                    <%= link_to_unless_current "EN", locale: "en" %> |
-                </li> 
-                <li>
-                    <%= link_to_unless_current "PT", locale: "pt" %>
-                </li>
-                <% if current_user%>
-                    <%= link_to "Log Out", session_path("current"), method: "delete" %>
-                <% end %>        
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container -->
-</nav>  
+                <li><p>
+                    <%= link_to_unless_current "EN", locale: "en" %> | <%= link_to_unless_current "PT", locale: "pt" %></p>
+                    <p><% if current_user%>
+                        <%= link_to "Log Out", session_path("current"), method: "delete" %>
+                        <% end %> </p>
+                    </li>
+                    
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+    </nav>  
