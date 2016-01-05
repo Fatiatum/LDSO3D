@@ -1,26 +1,39 @@
-<%= form_for @cont do |f| %>
+ <div class="col-md-9  wow fadeInRight animated">
 
-<p>
-  <%= f.label Catalog.human_attribute_name(:name) %><br>
-  <%= f.text_field :name %>
-</p>
+ 	<div class="row">
+ 		<%= form_for @cont do |f| %>
+ 		<div class="col-md-6">
+ 		<div >
+ 				<%= f.label Catalog.human_attribute_name(:name) %><br>
+ 				<%= f.text_field :name,class: "form-control"%>
+ 			</div>
 
-<p>
-  <%= f.label Catalog.human_attribute_name(:from_mail) %><br>
-  <%= f.text_field :from_mail %>
-</p>
+ 			<div >
+ 				<%= f.label Catalog.human_attribute_name(:from_mail) %><br>
+ 				<%= f.text_field :from_mail,class: "form-control"%>
+ 			</div>
 
-<p>
-  <%= f.label Catalog.human_attribute_name(:subject) %><br>
-  <%= f.text_field :subject %>
-</p>
+ 			<div >
+ 				<%= f.label Catalog.human_attribute_name(:subject) %><br>
+ 				<%= f.text_field :subject,class: "form-control" %>
+ 			</div>                                
+ 		</div>
+ 		<div class="col-md-6">
+ 			<div>
+ 				<%= f.label Catalog.human_attribute_name(:msg) %><br>
+ 				<%= f.text_area :msg,class: "form-control",rows: "5", cols: "10" %>
+ 			</div>
 
-<p>
-  <%= f.label Catalog.human_attribute_name(:msg) %><br>
-  <%= f.text_area :msg %>
-</p>
+ 			<div>
+ 				<%= f.submit t ".send",class: "btn btn-default submit-btn" %>
+ 			</div>                           
+ 		</div>
+ 		<% end %>
+ 	</div>
 
-<p>
-  <%= f.submit t ".send" %>
-</p>
-<% end %>
+ </div>
+
+
+
+
+
