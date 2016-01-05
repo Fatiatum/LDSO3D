@@ -1,81 +1,92 @@
-<header>
-<div><%= render 'shared/admin_navbar' %>
-</div>
-</header>
+
+<%= render 'shared/admin_navbar' %>
 <section class="about_us_area" id="ABOUT">
-<div>
-
-
-<h1 style="margin-top: 10%">EDIT HOME PAGE</h1>
-
- 
-<%= form_for @welcome do |f| %>
- 
-  <% if @welcome.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@welcome.errors.count, "error") %> prohibited
-        this welcome from being saved:
-      </h2>
-      <ul>
-        <% @welcome.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="about_title">
+          <h1 style="margin-top: 10%">EDIT HOME PAGE</h1>
+          <%= image_tag "shape.png" %>
+        </div>
+      </div>
     </div>
-  <% end %>
- 
-  <p>
-    <%= f.label :title_pt %><br>
-    <%= f.text_field :title_pt %>
-  </p>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-5">
+        <%= form_for @welcome do |f| %>
+        
+        <% if @welcome.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@welcome.errors.count, "error") %> prohibited
+            this welcome from being saved:
+          </h2>
+          <ul>
+            <% @welcome.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+        
+        <p>
+          <%= f.label :title_pt %><br>
+          <%= f.text_field :title_pt %>
+        </p>
 
-  <p>
-    <%= f.label :title_en %><br>
-    <%= f.text_field :title_en %>
-  </p>
+        <p>
+          <%= f.label :title_en %><br>
+          <%= f.text_field :title_en %>
+        </p>
 
-  <p>
-    <%= f.label :subtitle_pt %><br>
-    <%= f.text_field :subtitle_pt %>
-  </p>
+        <p>
+          <%= f.label :subtitle_pt %><br>
+          <%= f.text_field :subtitle_pt %>
+        </p>
 
-  <p>
-    <%= f.label :subtitle_en %><br>
-    <%= f.text_field :subtitle_en %>
-  </p>
+        <p>
+          <%= f.label :subtitle_en %><br>
+          <%= f.text_field :subtitle_en %>
+        </p>
 
-  <p>
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
-  </p>
+        <p>
+          <%= f.label :image %><br>
+          <%= f.file_field :image %>
+        </p>
 
-  <p>
-    <%= f.label :texttitle_pt %><br>
-    <%= f.text_field :texttitle_pt %>
-  </p>
+        <p>
+          <%= f.label :texttitle_pt %><br>
+          <%= f.text_field :texttitle_pt %>
+        </p>
 
-  <p>
-    <%= f.label :texttitle_en %><br>
-    <%= f.text_field :texttitle_en %>
-  </p>
+        <p>
+          <%= f.label :texttitle_en %><br>
+          <%= f.text_field :texttitle_en %>
+        </p>
 
-  <p>
-    <%= f.label :text_pt %><br>
-    <%= f.text_field :text_pt %>
-  </p>
+        <p>
+          <%= f.label :text_pt %><br>
+          <%= f.text_field :text_pt %>
+        </p>
 
-  <p>
-    <%= f.label :text_en %><br>
-    <%= f.text_field :text_en %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
- 
-<% end %>
- 
-<%= link_to 'Back',   home_path   %>
-</div>
-</section>
+        <p>
+          <%= f.label :text_en %><br>
+          <%= f.text_field :text_en %>
+        </p>
+        
+        <p>
+          <%= f.submit %>
+        </p>
+        
+        <% end %>
+        
+        <%= link_to 'Back',   home_path   %>
+      </div>
+    </div>
+  </section>
+
+
+
+
+

@@ -1,67 +1,85 @@
 <%= render 'shared/admin_navbar' %>
-<h1 style="margin-top: 10%">EDIT CONTACTS PAGE</h1>
- 
-<%= form_for @contact do |f| %>
- 
-  <% if @contact.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@contact.errors.count, "error") %> prohibited
-        this contact from being saved:
-      </h2>
-      <ul>
-        <% @contact.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+<section class="about_us_area" id="ABOUT">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="about_title">
+          <h1 style="margin-top: 10%">EDIT CONTACTS PAGE</h1>
+          <%= image_tag "shape.png" %>
+        </div>
+      </div>
     </div>
-  <% end %>
- 
-  <p>
-    <%= f.label :text_pt %><br>
-    <%= f.text_field :text_pt %>
-  </p>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-5">
+        <%= form_for @contact do |f| %>
+        
+        <% if @contact.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@contact.errors.count, "error") %> prohibited
+            this contact from being saved:
+          </h2>
+          <ul>
+            <% @contact.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+        
+        <p>
+          <%= f.label :text_pt %><br>
+          <%= f.text_field :text_pt %>
+        </p>
 
-  <p>
-    <%= f.label :text_en %><br>
-    <%= f.text_field :text_en %>
-  </p>
+        <p>
+          <%= f.label :text_en %><br>
+          <%= f.text_field :text_en %>
+        </p>
 
-  <p>
-    <%= f.label :phone_pt %><br>
-    <%= f.telephone_field :phone_pt %>
-  </p>
+        <p>
+          <%= f.label :phone_pt %><br>
+          <%= f.telephone_field :phone_pt %>
+        </p>
 
-  <p>
-    <%= f.label :phone_en %><br>
-    <%= f.telephone_field :phone_en %>
-  </p>
+        <p>
+          <%= f.label :phone_en %><br>
+          <%= f.telephone_field :phone_en %>
+        </p>
 
-  <p>
-    <%= f.label :email_pt %><br>
-    <%= f.email_field :email_pt %>
-  </p>
+        <p>
+          <%= f.label :email_pt %><br>
+          <%= f.email_field :email_pt %>
+        </p>
 
-  <p>
-    <%= f.label :email_en %><br>
-    <%= f.email_field :email_en %>
-  </p>
+        <p>
+          <%= f.label :email_en %><br>
+          <%= f.email_field :email_en %>
+        </p>
 
-  <p>
-    <%= f.label :address_pt %><br>
-    <%= f.text_field :address_pt %>
-  </p>
+        <p>
+          <%= f.label :address_pt %><br>
+          <%= f.text_field :address_pt %>
+        </p>
 
-  <p>
-    <%= f.label :address_en %><br>
-    <%= f.text_field :address_en %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
- 
-<% end %>
- 
-<%= link_to 'Back',   contacts_path   %>
+        <p>
+          <%= f.label :address_en %><br>
+          <%= f.text_field :address_en %>
+        </p>
+        
+        <p>
+          <%= f.submit %>
+        </p>
+        
+        <% end %>
+        
+        <%= link_to 'Back',   contacts_path   %>
 
+
+      </div>
+    </div>
+  </section>
+
+  
