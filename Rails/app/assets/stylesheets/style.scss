@@ -449,6 +449,12 @@ h2{
 }
 
 
-p .navbar-brand{
-	color: green;
+.navbar-brand a {
+	color: #777;
+	text-decoration:none;
+	
+}
+.navbar-brand a:hover{
+	color: #f74d65;
+	text-decoration:none;
 }
