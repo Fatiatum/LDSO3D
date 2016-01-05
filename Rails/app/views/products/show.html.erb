@@ -35,32 +35,42 @@
 					<%= image_tag @product.image %>
 				</div>
 			</div>
+			<% if current_user%>
+				<%= link_to "New Experience", new_experience_path(:Product_id => @product.to_param)%>
+			<% end %>
 			<table>
 				<thead>
 					<tr>
-						<th>Tipo de experiencia</th>
+						<th>Programa</th>
+						<th>Tipo de pacote</th>
+						<th>Experiencia</th>
 						<th>Preço</th>
 					</tr>
 				</thead>
 
 				<tbody>
 					<% @experiences.each do |experience| %>
-					<tr>
+					<tr>	
 						<% if @locale == 'pt'%>
-						<td><%= experience.description_pt %></td>
+							<td><%= experience.program_type %></td>
+							<td><%= experience.package_type %></td>
+							<td><%= experience.description_pt %></td>
 						<%else%>
-						<td><%= experience.description_en %></td>
+							<td><%= experience.program_type %></td>
+							<td><%= experience.package_type %></td>
+							<td><%= experience.description_en %></td>
 						<% end %>
 						<td><%= experience.price %></td>
-						<td><%= link_to 'Edit', edit_experience_path(experience) %></td>
-						<td><%= link_to 'Destroy', experience, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-						<td><%= link_to 'Checkout', new_order_path(:experience_id => experience.id, :program_type => "Dia", :package_type => "Luxo") %></td>
+						<% if current_user%>
+							<td><%= link_to 'Edit', edit_experience_path(experience) %></td>
+							<td><%= link_to 'Destroy', experience, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+						<% end %>
+						<td><%= link_to 'Book this experience', new_order_path(:experience_id => experience.id) %></td>
 					</tr>
 					<% end %>
 				</tbody>
-			</table>			
+			</table>	
 		</div>
-		<%= link_to "New Experience", new_experience_path(:Product_id => @product.to_param)%>
 	</div>
 </section>
 <!--/Product-->

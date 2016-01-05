@@ -16,8 +16,6 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new()
     @order.experience_id = params[:experience_id]
-    @order.program_type = params[:program_type]
-    @order.package_type = params[:package_type]
     @order.price = Experience.find(@order.experience_id).price
   end
 
@@ -33,7 +31,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        ManageMailer.order(@experience, @order).deliver_now
+        ManageMailer.order(@experience, @order, @order.date_selected, @order.number_person).deliver_now
         format.html { redirect_to home_url, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else
@@ -61,6 +59,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:experience_id, :name, :email, :program_type, :package_type, :price)
+      params.require(:order).permit(:experience_id, :name, :email, :program_type, :package_type, :price, :payment_type, :date_selected, :number_person)
     end
 end

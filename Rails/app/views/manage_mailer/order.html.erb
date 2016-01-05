@@ -1,3 +1,11 @@
 <p>
-  O cliente <%= @client.name%>(<%= @client.email %>), fez o pedido de reserva da experiencia <%= @experience.description_pt%> referente ao produto <%= @product.name_pt%>, com o preço de <%= @experience.price%>. 
+  O cliente <%= @client.name%> com o e-mail: <%= @client.email %>, fez o pedido de reserva da seguinte experiencia:
+	<br> Descrição: <%= @experience.description_pt%> 
+	<br> Produto:   <%= @product.name_pt%> 
+	<br> Tipo de Programa: <%= @experience.program_type %>
+	<br> Tipo de Pacote: <%= @experience.package_type %>
+	<br> Preço:     <%= @experience.price %> 
+	<br> Tipo de Pagamento: <%= @client.payment_type %>
+	<br> Data: <%= @date %>
+	<br> Número de Pessoas: <%= @number_person %> 
 </p>

@@ -13,11 +13,11 @@
   <%= f.hidden_field :Product_id %>
   <div class="field">
     <%= f.label :program_type %><br>
-    <%= f.text_field :program_type %>
+    <%= f.select :program_type, [["Day", "Day"], ["Nigth", "Nigth"], ["Full Day", "Full Day"]] %>
   </div>
   <div class="field">
     <%= f.label :package_type %><br>
-    <%= f.text_field :package_type %>
+    <%= f.select :package_type, [["Lux", "Lux"], ["Standart", "Standart"], ["Budget", "Budget"]] %>
   </div>
   <div class="field">
     <%= f.label :description_pt %><br>
