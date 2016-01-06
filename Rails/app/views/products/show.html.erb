@@ -68,11 +68,13 @@
 					<% end %>
 				</tbody>
 			</table>
-			<p class="btn btn-default">
+			
 			<% if current_user%>
-				<%= link_to "New Experience", new_experience_path(:Product_id => @product.to_param)%>
+				<p class="btn btn-default">
+					<%= link_to "New Experience", new_experience_path(:Product_id => @product.to_param)%>
+				</p>
 			<% end %>	
-			</p>
+			
 		</div>
 	</div>
 </section>

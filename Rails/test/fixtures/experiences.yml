@@ -1,11 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name_pt: MyString
-  name_en: MyString
-  product_id: 1
+  program_type: MyString
+  package_type: MyString
+  description_pt: MyString
+  description_en: MyString
+  price: MyString
+  Product_id: 1
 
 two:
-  name_pt: MyString
-  name_en: MyString
-  product_id: 2
+  program_type: MyString
+  package_type: MyString
+  description_pt: MyString
+  description_en: MyString
+  price: MyString
+  Product_id: 1

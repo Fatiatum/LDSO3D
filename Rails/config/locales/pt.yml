@@ -47,6 +47,7 @@ pt:
       about:    "Sobre nós"
       contacts: "Contactos"
       home_edit: "Editar Home"
+      admin_edit: "Editar Admin"
       catalog_edit: "Editar Catálogo"
       catalog_view: "Ver Catálogo"
       faq_edit: "Editar FAQ"

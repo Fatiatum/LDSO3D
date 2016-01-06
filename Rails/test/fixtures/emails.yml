@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  passsword_digest: MyString
+  iban: MyString
+  nib: MyString
+  fb_link: MyString
+  tw_link: MyString
+  insta_link: MyString
+
+two:
+  username: MyString
+  passsword_digest: MyString
+  iban: MyString
+  nib: MyString
+  fb_link: MyString
+  tw_link: MyString
+  insta_link: MyString

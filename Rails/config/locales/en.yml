@@ -68,6 +68,7 @@ en:
       about:    "About"
       contacts: "Contacts"
       home_edit: "Edit Home"
+      admin_edit: "Edit Admin"
       catalog_edit: "Edit Catalog"
       catalog_view: "View Catalog"
       faq_edit: "Edit FAQ"

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :users
+  resources :emails
   resources :entries, defaults: { format: 'json' }
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
     resources :users
