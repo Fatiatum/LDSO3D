@@ -35,16 +35,14 @@
 					<%= image_tag @product.image %>
 				</div>
 			</div>
-			<% if current_user%>
-				<%= link_to "New Experience", new_experience_path(:Product_id => @product.to_param)%>
-			<% end %>
+			
 			<table>
 				<thead>
 					<tr>
-						<th>Programa</th>
-						<th>Tipo de pacote</th>
-						<th>Experiencia</th>
-						<th>Preço</th>
+						<th class="col-md-2">Programa</th>
+						<th class="col-md-2">Tipo de pacote</th>
+						<th class="col-md-2">Experiencia</th>
+						<th class="col-md-2">Preço</th>
 					</tr>
 				</thead>
 
@@ -52,24 +50,29 @@
 					<% @experiences.each do |experience| %>
 					<tr>	
 						<% if @locale == 'pt'%>
-							<td><%= experience.program_type %></td>
-							<td><%= experience.package_type %></td>
-							<td><%= experience.description_pt %></td>
+							<td class="col-md-2"><%= experience.program_type %></td>
+							<td class="col-md-2"><%= experience.package_type %></td>
+							<td class="col-md-2"><%= experience.description_pt %></td>
 						<%else%>
-							<td><%= experience.program_type %></td>
-							<td><%= experience.package_type %></td>
-							<td><%= experience.description_en %></td>
+							<td class="col-md-2"><%= experience.program_type %></td>
+							<td class="col-md-2"><%= experience.package_type %></td>
+							<td class="col-md-2"><%= experience.description_en %></td>
 						<% end %>
-						<td><%= experience.price %></td>
+						<td class="col-md-2"><%= experience.price %></td>
 						<% if current_user%>
-							<td><%= link_to 'Edit', edit_experience_path(experience) %></td>
-							<td><%= link_to 'Destroy', experience, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+							<td class="btn btn-default"><%= link_to 'Edit', edit_experience_path(experience) %></td>
+							<td class="btn btn-default"><%= link_to 'Destroy', experience, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 						<% end %>
-						<td><%= link_to 'Book this experience', new_order_path(:experience_id => experience.id) %></td>
+						<td class="btn btn-default"><%= link_to 'Book this experience', new_order_path(:experience_id => experience.id) %></td>
 					</tr>
 					<% end %>
 				</tbody>
-			</table>	
+			</table>
+			<p class="btn btn-default">
+			<% if current_user%>
+				<%= link_to "New Experience", new_experience_path(:Product_id => @product.to_param)%>
+			<% end %>	
+			</p>
 		</div>
 	</div>
 </section>

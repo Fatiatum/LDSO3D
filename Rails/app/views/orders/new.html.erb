@@ -1,5 +1,21 @@
-<h1>New Order</h1>
+<section class="about_us_area" id="ABOUT">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="about_title">
+					<h1 style="margin-top: 10%">New Order</h1>
+					<%= image_tag "shape.png" %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<%= render 'form' %>
 
-<%= render 'form' %>
+				<%= link_to 'Back', orders_path %>
+			</div>
+		</div>
+	</section>
 
-<%= link_to 'Back', orders_path %>

@@ -1,41 +1,30 @@
 <%= form_for @product do |f| %>
+<div class="col-md-6">
   <p>
     <%= f.label :name_pt %><br>
-    <%= f.text_field :name_pt %>
+    <%= f.text_field :name_pt,class: "form-control" %>
   </p>
-
-  <p>
-    <%= f.label :name_en %><br>
-    <%= f.text_field :name_en %>
-  </p>
- 
   <p>
     <%= f.label :description_pt %><br>
-    <%= f.text_area :description_pt %>
+    <%= f.text_area :description_pt,class: "form-control" %>
   </p>
-
-  <p>
-    <%= f.label :description_en %><br>
-    <%= f.text_area :description_en %>
-  </p>
-
   <p>
     <%= f.label :image %><br>
     <%= f.file_field :image %>
   </p>
+</div>
+<div class="col-md-6">
+ <p>
+  <%= f.label :name_en %><br>
+  <%= f.text_field :name_en,class: "form-control" %>
+</p>
+<p>
+  <%= f.label :description_en %><br>
+  <%= f.text_area :description_en,class: "form-control" %>
+</p>
 
-  <%= f.fields_for :experiences do |experience| %>
-  <p>
-    <%= experience.label :name_pt %><br />
-    <%= experience.text_field :name_pt %><br />
-    <%= experience.label :name_en %><br />
-    <%= experience.text_field :name_en %><br />
-    <%= experience.check_box :_destroy %>
-    <%= experience.label :_destroy, 'remove' %>
-  </p>
-  <% end %>
-   
-  <p>
-    <%= f.submit %>
-  </p>
+<p>
+  <%= f.submit %>
+</p>
+</div>
 <% end %>

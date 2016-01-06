@@ -1,35 +1,35 @@
 <%= form_for @catalog do |f| %>
+<div class="col-md-6">
   <p>
     <%= f.label :text_pt %><br>
-    <%= f.text_field :text_pt %>
+    <%= f.text_field :text_pt,class: "form-control" %>
   </p>
-
-  <p>
-    <%= f.label :text_en %><br>
-    <%= f.text_field :text_en %>
-  </p>
-
   <p>
     <%= f.label :exp_title_pt %><br>
-    <%= f.text_field :exp_title_pt %>
+    <%= f.text_field :exp_title_pt,class: "form-control" %>
   </p>
-
-  <p>
-    <%= f.label :exp_title_en %><br>
-    <%= f.text_field :exp_title_en %>
-  </p>
- 
   <p>
     <%= f.label :exp_text_pt %><br>
-    <%= f.text_field :exp_text_pt %>
+    <%= f.text_field :exp_text_pt,class: "form-control" %>
+  </p>
+</div>
+<div class="col-md-6">
+  <p>
+    <%= f.label :text_en %><br>
+    <%= f.text_field :text_en,class: "form-control" %>
+  </p>
+  <p>
+    <%= f.label :exp_title_en %><br>
+    <%= f.text_field :exp_title_en,class: "form-control" %>
   </p>
 
   <p>
     <%= f.label :exp_text_en %><br>
-    <%= f.text_field :exp_text_en %>
+    <%= f.text_field :exp_text_en,class: "form-control" %>
   </p>
-   
+  
   <p>
     <%= f.submit %>
   </p>
+</div>
 <% end %>

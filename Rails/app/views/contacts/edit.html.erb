@@ -12,7 +12,7 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset-5">
+    <div class="col-md-8 col-md-offset-2">
         <%= form_for @contact do |f| %>
         
         <% if @contact.errors.any? %>
@@ -28,51 +28,54 @@
           </ul>
         </div>
         <% end %>
-        
-        <p>
-          <%= f.label :text_pt %><br>
-          <%= f.text_field :text_pt %>
-        </p>
+        <div class="col-md-6">
+          <p>
+            <%= f.label :text_pt %><br>
+            <%= f.text_field :text_pt,class: "form-control" %>
+          </p>
 
-        <p>
-          <%= f.label :text_en %><br>
-          <%= f.text_field :text_en %>
-        </p>
 
-        <p>
-          <%= f.label :phone_pt %><br>
-          <%= f.telephone_field :phone_pt %>
-        </p>
 
-        <p>
-          <%= f.label :phone_en %><br>
-          <%= f.telephone_field :phone_en %>
-        </p>
+          <p>
+            <%= f.label :phone_pt %><br>
+            <%= f.telephone_field :phone_pt,class: "form-control" %>
+          </p>
+          <p>
+            <%= f.label :email_pt %><br>
+            <%= f.email_field :email_pt,class: "form-control" %>
+          </p>
+          <p>
+            <%= f.label :address_pt %><br>
+            <%= f.text_field :address_pt,class: "form-control" %>
+          </p>
+        </div>
+        <div class="col-md-6">
+          <p>
+            <%= f.label :text_en %><br>
+            <%= f.text_field :text_en,class: "form-control" %>
+          </p>
+          <p>
+            <%= f.label :phone_en %><br>
+            <%= f.telephone_field :phone_en,class: "form-control" %>
+          </p>
 
-        <p>
-          <%= f.label :email_pt %><br>
-          <%= f.email_field :email_pt %>
-        </p>
 
-        <p>
-          <%= f.label :email_en %><br>
-          <%= f.email_field :email_en %>
-        </p>
+          <p>
+            <%= f.label :email_en %><br>
+            <%= f.email_field :email_en,class: "form-control" %>
+          </p>
 
-        <p>
-          <%= f.label :address_pt %><br>
-          <%= f.text_field :address_pt %>
-        </p>
 
-        <p>
-          <%= f.label :address_en %><br>
-          <%= f.text_field :address_en %>
-        </p>
-        
-        <p>
-          <%= f.submit %>
-        </p>
-        
+
+          <p>
+            <%= f.label :address_en %><br>
+            <%= f.text_field :address_en,class: "form-control" %>
+          </p>
+
+          <p>
+            <%= f.submit %>
+          </p>
+        </div>
         <% end %>
         
         <%= link_to 'Back',   contacts_path   %>

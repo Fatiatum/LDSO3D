@@ -11,27 +11,35 @@
     </div>
   <% end %>
   <%= f.hidden_field :Product_id %>
+  <div class="col-md-4">
   <div class="field">
     <%= f.label :program_type %><br>
-    <%= f.select :program_type, [["Day", "Day"], ["Nigth", "Nigth"], ["Full Day", "Full Day"]] %>
+    <%= f.select :program_type, [["Day", "Day"], ["Nigth", "Nigth"], ["Full Day", "Full Day"]],class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :package_type %><br>
-    <%= f.select :package_type, [["Lux", "Lux"], ["Standart", "Standart"], ["Budget", "Budget"]] %>
+    <%= f.select :package_type, [["Lux", "Lux"], ["Standart", "Standart"], ["Budget", "Budget"]],class: "form-control" %>
   </div>
+  </div>
+  <div class="col-md-4">
   <div class="field">
     <%= f.label :description_pt %><br>
-    <%= f.text_field :description_pt %>
+    <%= f.text_field :description_pt,class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :description_en %><br>
-    <%= f.text_field :description_en %>
+    <%= f.text_field :description_en,class: "form-control" %>
   </div>
+  </div>
+  <div class="col-md-4">
   <div class="field">
     <%= f.label :price %><br>
-    <%= f.text_field :price %>
+    <%= f.text_field :price,class: "form-control" %>
   </div>
   <div class="actions">
+  <p>
     <%= f.submit %>
+    </p>
+  </div>
   </div>
 <% end %>

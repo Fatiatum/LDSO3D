@@ -1,21 +1,33 @@
 <%= form_for @faq do |f| %>
 
-  <%= f.fields_for :questions do |question| %>
-  <p>
-    <%= question.label :name_pt %><br />
-    <%= question.text_field :name_pt %><br />
-    <%= question.label :name_en %><br />
-    <%= question.text_field :name_en %><br />
-    <%= question.label :answer_pt %><br />
-    <%= question.text_area :answer_pt %><br />
-    <%= question.label :answer_en %><br />
-    <%= question.text_area :answer_en %><br />
-    <%= question.check_box :_destroy %>
-    <%= question.label :_destroy, 'remove' %>
-  </p>
+<%= f.fields_for :questions do |question| %>
+<div class="row">
+  <div class="col-md-6">
+    <p>
+      <%= question.label :name_pt %><br />
+      <%= question.text_field :name_pt,class: "form-control" %><br /></p>
+
+      <p> <%= question.label :answer_pt %><br />
+       <%= question.text_area :answer_pt,class: "form-control" %><br /></p>
+
+       <p> <%= question.check_box :_destroy %>
+        <%= question.label :_destroy, 'remove' %>
+      </p>
+    </div>
+    <div class="col-md-6">
+      <p> <%= question.label :name_en %><br />
+        <%= question.text_field :name_en,class: "form-control" %><br />
+      </p>
+
+      <p> <%= question.label :answer_en %><br />
+        <%= question.text_area :answer_en,class: "form-control" %><br />
+      </p>
+
+    </div>
+  </div>
   <% end %>
-   
+
   <p>
     <%= f.submit %>
   </p>
-<% end %>
+  <% end %>

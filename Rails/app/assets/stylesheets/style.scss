@@ -213,6 +213,7 @@ margin-top: -40px;
 }
 .single_image{
 	margin-right: 3px;
+	margin-bottom: 20px;
 	position: relative;
 	transition: all 1s;
 }
@@ -246,7 +247,7 @@ text-transform: uppercase;
 .image_overlay h2{
 position: absolute;
 top: 70px;
-right: 230px;
+right: 170px;
 font-size: 25px;
 color: black;
 text-transform: uppercase;
@@ -460,4 +461,8 @@ h2{
 .navbar-brand a:hover{
 	color: #f74d65;
 	text-decoration:none;
+}
+
+.container div table{
+	margin-top:20px;
 }
