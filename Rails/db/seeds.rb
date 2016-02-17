@@ -73,7 +73,7 @@ Question.create(name_pt:'Os valores apresentados incluem transporte?', name_en:'
 	answer_pt:'Não. o transporte é uma opção do cliente. Caso necessitem de transporte e em função do pacote escolhido a empresa apresenta um orçamento.', answer_en:'No. The transportation is a client\'s option. In case they need a transport and according to the chosen package, the company will present an appropriate budget.',
 	faq_id:'1')
 
-Product.create(name_pt: 'Your OPorto Romântico', name_en: 'Your Porto Romantic', description_pt: 'Vem apreciar de uma escapada romântica na maravilhosa cidade do Porto.', description_en: 'Enjoy a romantic getaway in the wonderful cityof Oporto.', image: 'índice.jpg')
+Product.create(name_pt: 'Your OPorto Romântico', name_en: 'Your Porto Romantic', description_pt: 'Vem apreciar de uma escapada romântica na maravilhosa cidade do Porto.', description_en: 'Enjoy a romantic getaway in the wonderful cityof Oporto.', image: '/assets/images/índice.jpg')
 Product.create(name_pt: 'Your OPorto Aventura', name_en: 'Your Porto Adventure', description_pt: 'Vem aventurar-te na magnética cidade do Porto e no energético rio Douro. ', description_en: 'Be adventurous in the magnetic Oporto and energetic Douro river.', image: 'oporto-adventure-tours.jpg' )
 Product.create(name_pt: 'Your OPorto Afrodisíaco', name_en: 'Your Porto Aphrodisiac', description_pt: 'Vem desfrutar de um encontro afrodisíaco na quente cidade do Porto.', description_en: 'Enjoy an aphrodisiac encounter in the hot city of Oporto.', image: 'romantic_date_tips_at_home.jpg' )
 

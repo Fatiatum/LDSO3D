@@ -34,7 +34,7 @@
                 <% if @products.any? %>
                 <% @products.each do |product| %>
                 <div class="col-md-4 no_padding portfolio-item romantic">
-                    <% if @locale == 'pt'%>
+                    <% if current_user%>
                         <p class="btn btn-default">
                             <%= link_to 'Edit', edit_product_path(product) %>
                         </p>
@@ -43,7 +43,11 @@
                         </p>
                     <% end %>
                     <div class="single_image">
-                        <%= image_tag product.image %>
+                        <% if product.image.blank? %>
+                            <%= image_tag "logo.png" %>
+                        <% else %>
+                            <%= image_tag product.image %>
+                        <% end %>
                         <% if @locale == 'pt'%>
                         <div class="image_overlay">
                             <%= link_to(product) do %>

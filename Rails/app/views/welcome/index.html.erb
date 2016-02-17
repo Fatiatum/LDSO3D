@@ -1,7 +1,13 @@
     <%= render 'shared/header' %>
 
+<!--
+                            image_tag "logo.png" 
+                        
+                            image_tag @welcome.image  -->
 	<!--NAVBAR & BCKG-->
-    <header style="background-image: url('<%= image_path(@welcome.image) %>');background-size: cover;background-repeat: no-repeat; background-position: 50% -100px;"id="HOME">
+    <header style="background-image: url('<%= image_path(@welcome.image) %>');
+                   background-size: cover;background-repeat: no-repeat; 
+                   background-position: 50% -100px;"id="HOME">
         <div class="section_overlay">
             <% if current_user%>
                 <%= render 'shared/admin_navbar'%>

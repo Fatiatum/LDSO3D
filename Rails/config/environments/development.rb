@@ -45,20 +45,11 @@ Rails.application.configure do
     port:                 587,
     domain:               'example.com',
     authentication:       'plain',
-    user_name:            "jorge.filipe.teixeira.1@gmail.com",
-    password:             "arcticmonkeys17",
+    user_name:            ENV['gmail_username'],
+    password:             ENV['gmail_password'],
     enable_starttls_auto: true  
   }
 
   config.action_mailer.default_url_options = { host: "localhost:3000" }
-
-  config.after_initialize do
-    ActiveMerchant::Billing::Base.mode = :test
-    ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
-      :login => "ldso3-seller_api2.gmail.com",
-      :password => "HYSZR6AYM68UUEK6",
-      :signature => "AFcWxV21C7fd0v3bYYYRCpSSRl31A97AvNybP42TqmrSNdSA2wyD.5eJ"
-    )
-  end
   
 end

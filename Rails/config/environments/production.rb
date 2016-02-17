@@ -77,12 +77,15 @@ config.i18n.fallbacks = true
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.after_initialize do
-    ActiveMerchant::Billing::Base.mode = :production
-    ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
-      :login => "ldso3-seller_api2.gmail.com",
-      :password => "HYSZR6AYM68UUEK6",
-      :signature => "AFcWxV21C7fd0v3bYYYRCpSSRl31A97AvNybP42TqmrSNdSA2wyD.5eJ"
-      )
-  end
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'example.com',
+    authentication:       'plain',
+    user_name:            ENV['gmail_username'],
+    password:             ENV['gmail_password'],
+    enable_starttls_auto: true  
+  }
 end

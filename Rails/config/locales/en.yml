@@ -47,6 +47,10 @@ en:
     form:
       send: "Send"
 
+  orders:
+    new:
+      order:   "Make Order"
+
   shared:
     footer:
       follow: "Follow Us Here"

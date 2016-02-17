@@ -26,6 +26,10 @@ pt:
     form:
       send: "Enviar"
 
+  orders:
+    new:
+      order:   "Fazer Encomenda"
+
   shared:
     footer:
       follow: "Siga-nos aqui"

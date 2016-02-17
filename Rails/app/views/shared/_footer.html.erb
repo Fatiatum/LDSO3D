@@ -7,19 +7,11 @@
                     <div class="social">
                         <h2><%= t ".follow" %></h2>
                         <ul class="icon_list">
-                            <li><a href="http://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="http://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="http://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                            <% @admin = User.last%>
+                            <li><%= link_to '<i class="fa fa-facebook"></i>'.html_safe, "http://#{@admin.fb_link}"%></li>
+                            <li><%= link_to '<i class="fa fa-twitter"></i>'.html_safe, "http://#{@admin.tw_link}"%></li>
+                            <li><%= link_to '<i class="fa fa-instagram"></i>'.html_safe, "http://#{@admin.insta_link}"%></li>
                         </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="copyright_text   wow fadeInUp animated">
-                        <p>&copy; <%= t ".rights" %> <a href="#"target="_blank"></a></p>
                     </div>
                 </div>
             </div>
