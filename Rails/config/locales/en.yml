@@ -24,6 +24,9 @@ en:
     index:
       title: "Experiences"
       none:  "None Product Available"
+      edit: "Edit"
+      destroy: "Destroy"
+
 
   about:
     index:
@@ -37,6 +40,14 @@ en:
   products:
     show:
       none:  "None Experience Available"
+      product_name: "Program"
+      package_type: "Package Type"
+      experience: "Experience"
+      price: "Price"
+      edit: "Edit"
+      destroy: "Destroy"
+      book: "Book this experience"
+      new: "New Experience"
 
   contacts:
     index:
@@ -46,6 +57,15 @@ en:
       address: "Address"
     form:
       send: "Send"
+
+  experiences:
+    form:
+      day: "Day"
+      night: "Night"
+      full_day: "Full Day"
+      lux: "Lux"
+      standard: "Standard"
+      budget: "Budget"
 
   orders:
     new:

@@ -19,9 +19,9 @@
 			<div class="col-md-12 text-center">
 				<div class="product_title wow fadeInUp animated">
 					<% if @locale == 'pt'%>
-					<h2><%= @product.name_pt %></h2>
+						<h2><%= @product.name_pt %></h2>
 					<%else%>
-					<h2><%= @product.name_en %></h2>
+						<h2><%= @product.name_en %></h2>
 					<% end %>
 					<%= image_tag "shape.png" %>
 				</div>
@@ -44,10 +44,10 @@
 			<table>
 				<thead>
 					<tr>
-						<th class="col-md-2">Programa</th>
-						<th class="col-md-2">Tipo de pacote</th>
-						<th class="col-md-2">Experiencia</th>
-						<th class="col-md-2">Preço</th>
+						<th class="col-md-2"><%= t ".product_name" %></th>
+						<th class="col-md-2"><%= t ".package_type" %></th>
+						<th class="col-md-2"><%= t ".experience" %></th>
+						<th class="col-md-2"><%= t ".price" %></th>
 					</tr>
 				</thead>
 
@@ -65,10 +65,10 @@
 						<% end %>
 						<td class="col-md-2"><%= experience.price %></td>
 						<% if current_user%>
-							<td class="btn btn-default"><%= link_to 'Edit', edit_experience_path(experience) %></td>
-							<td class="btn btn-default"><%= link_to 'Destroy', experience, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+							<td class="btn btn-default"><%= link_to t(".edit"), edit_experience_path(experience) %></td>
+							<td class="btn btn-default"><%= link_to t(".destroy"), experience, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 						<% end %>
-						<td class="btn btn-default"><%= link_to 'Book this experience', new_order_path(:experience_id => experience.id) %></td>
+						<td class="btn btn-default"><%= link_to t(".book"), new_order_path(:experience_id => experience.id) %></td>
 					</tr>
 					<% end %>
 				</tbody>
@@ -76,7 +76,7 @@
 			
 			<% if current_user%>
 				<p class="btn btn-default">
-					<%= link_to "New Experience", new_experience_path(:Product_id => @product.to_param)%>
+					<%= link_to t(".new"), new_experience_path(:Product_id => @product.to_param)%>
 				</p>
 			<% end %>	
 			

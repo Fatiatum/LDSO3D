@@ -1,37 +1,56 @@
+ <!--
  <div class="col-md-9  wow fadeInRight animated">
+	<div class="row">
+		<div class="col-md-6">
+			<form action="https://formspree.io/<%= @contact.email_pt %>"
+				method="POST">
+				<div class="form-control">
+					<label>Name:</label>
+					<input type="text" name="name"><br>
+				</div>
+				<div class="form-control">
+					<label>Email:</label>
+					<input type="email" name="_replyto"><br>
+				</div>
+				<div class="form-control">
+					<label>Type of Payment:</label>
+					<input type="radio" name="gender" value="male" checked> Male
+					<input type="radio" name="gender" value="female"> Female<br>
+				</div>
+				<div class="form-control">
+					<label>Date:</label>
+					<input type="date" name="date"><br>
+				</div>                  
+				<input type="submit" value="Send">
+			</form>                        
+		</div>
+	</div>
+</div>
+-->
 
- 	<div class="row">
- 		<%= form_for @cont do |f| %>
- 		<div class="col-md-6">
- 		<div >
- 				<%= f.label Catalog.human_attribute_name(:name) %><br>
- 				<%= f.text_field :name,class: "form-control"%>
- 			</div>
-
- 			<div >
- 				<%= f.label Catalog.human_attribute_name(:from_mail) %><br>
- 				<%= f.text_field :from_mail,class: "form-control"%>
- 			</div>
-
- 			<div >
- 				<%= f.label Catalog.human_attribute_name(:subject) %><br>
- 				<%= f.text_field :subject,class: "form-control" %>
- 			</div>                                
- 		</div>
- 		<div class="col-md-6">
- 			<div>
- 				<%= f.label Catalog.human_attribute_name(:msg) %><br>
- 				<%= f.text_area :msg,class: "form-control",rows: "5", cols: "10" %>
- 			</div>
-
- 			<div>
- 				<%= f.submit t ".send",class: "btn btn-default submit-btn" %>
- 			</div>                           
- 		</div>
- 		<% end %>
- 	</div>
-
- </div>
+<div class="col-md-9  wow fadeInRight animated">
+	<div class="row">
+		<div class="col-md-6">
+			<form action="https://formspree.io/<%= @contact.email_pt %>"
+				method="POST">
+				<div>
+					<input class="form-control" type="text" name="name" placeholder="Your Name">
+				</div>
+				<div>
+					<input class="form-control" type="email" name="email" placeholder="Your email"> <br>
+				</div>
+				<div>
+					<input class="form-control" type="text" name="subject" placeholder="Subject of the msg">
+				</div>
+				<div>
+					<textarea class="form-control" name="message" placeholder="Your message"></textarea>
+				</div>  
+				<hr>                
+				<input type="submit" value="Send" class="btn btn-default submit-btn">
+			</form>                        
+		</div>
+	</div>
+</div>
 
 
 

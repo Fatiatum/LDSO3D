@@ -16,8 +16,8 @@ About.create(text_pt: 'TESTE DO ABOUT', text_en: 'TESTING ABOUT DATABASE WITH TH
 			 image: 'w2.jpg')
 
 Contact.create(text_pt: 'CONTACTS TEXT EXAMPLE', text_en: 'CONTACTS TEXT EXAMPLE',
-	phone_pt: '229876123', phone_en: '229876123', 
-	email_pt: 'jorge.filipe.teixeira.1@gmail.com', email_en: 'jorge.filipe.teixeira.1@gmail.com',
+	phone_pt: '2XXXXXXXX', phone_en: '2XXXXXXXX', 
+	email_pt: 'email@mail.com', email_en: 'email@mail.com',
 	address_pt: 'R. do exemplo, nº 123 1º esquerdo direito', address_en: 'R. do exemplo, nº 123 1º esquerdo direito')
 
 Catalog.create(text_pt: 'TEXTO DE EXEMPLO', text_en: 'EXAMPLE TEXT',

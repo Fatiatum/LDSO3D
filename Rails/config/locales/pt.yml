@@ -3,6 +3,8 @@ pt:
     index:
       title: "Experiencias"
       none:  "Nenhum produto foi ainda inserido"
+      edit: "Editar"
+      destroy: "Remover"
 
   about:
     index:
@@ -16,6 +18,14 @@ pt:
   products:
     show:
       none:  "Nenhuma experiencia foi inserida"
+      product_name: "Programa"
+      package_type: "Tipo de Programa"
+      experience: "Experiência"
+      price: "Preço"
+      edit: "Editar"
+      destroy: "Remover"
+      book: "Marcar esta experiência"
+      new: "Nova Experiência"
 
   contacts:
     index:
@@ -25,6 +35,15 @@ pt:
       address: "Morada"
     form:
       send: "Enviar"
+
+  experiences:
+    form:
+      day: "Dia"
+      night: "Noite"
+      full_day: "Dia completo"
+      lux: "Luxuoso"
+      standard: "Standard"
+      budget: "Económico"
 
   orders:
     new:

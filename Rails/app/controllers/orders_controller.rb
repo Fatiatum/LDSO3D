@@ -15,6 +15,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @order = Order.new()
+    @contact = Contact.first
     @order.experience_id = params[:experience_id]
     @order.price = Experience.find(@order.experience_id).price
   end

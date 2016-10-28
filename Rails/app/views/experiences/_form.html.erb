@@ -14,11 +14,11 @@
   <div class="col-md-4">
   <div class="field">
     <%= f.label :program_type %><br>
-    <%= f.select :program_type, [["Day", "Day"], ["Nigth", "Nigth"], ["Full Day", "Full Day"]],class: "form-control" %>
+    <%= f.select :program_type, [[t(".day"), "Day"], [t(".night"), "Nigth"], [t(".full_day"), "Full Day"]],class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :package_type %><br>
-    <%= f.select :package_type, [["Lux", "Lux"], ["Standart", "Standart"], ["Budget", "Budget"]],class: "form-control" %>
+    <%= f.select :package_type, [[t(".lux"), "Lux"], [t(".standard"), "Standard"], [t(".budget"), "Budget"]],class: "form-control" %>
   </div>
   </div>
   <div class="col-md-4">
