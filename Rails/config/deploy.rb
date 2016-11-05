@@ -2,7 +2,7 @@
 lock '3.4.0'
 
 set :application, 'YOP'
-set :repo_url, 'git@github.com:Fatiatum/LDSO3D.git'
+set :repo_url, 'git@github.com:Fatiatum/LDSO3D/Rails.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
